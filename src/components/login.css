@@ -1,0 +1,37 @@
+.page{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hai{
+    margin-top: 160px;
+    position: relative;
+}
+
+.paper1{
+    background: linear-gradient(15deg, #373975 20%, #c4497b 80%);
+    margin-top: 115px;
+    border-radius: 5px;
+    color: white;
+}
+.hey{
+    margin-top: -105px;
+    background-color: white;
+    border-radius: 8px;
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hey_grid{
+    margin-top: 75px;
+}
+.but{
+    background: linear-gradient(15deg, #373975 20%, #c4497b 80%);
+    
+}
+.remem{
+}
