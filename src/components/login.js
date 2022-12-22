@@ -1,4 +1,4 @@
-import { Grid, Paper, Avatar, TextField, Switch, FormControlLabel, FormGroup, Stack, Button, IconButton, PhotoCamera, Link, Typography } from "@material-ui/core";
+import { Grid, TextField, Switch, FormControlLabel, FormGroup,  Button, Link, Typography } from "@material-ui/core";
 import React, { useState } from "react";
 import "./login.css";
 import { useNavigate } from 'react-router-dom';
