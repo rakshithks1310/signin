@@ -1,4 +1,4 @@
-import * as React from 'react';
+
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -8,13 +8,15 @@ import { useNavigate } from 'react-router-dom';
 import Login from './login';
 import Profile from './profile';
 import { render } from '@testing-library/react';
+import React, { useState } from "react";
 
 export default function Home() {
     const sign_but = { color: 'white', position: 'absolute', right: '6%', top: '60px', fontSize: '24px', textTransform: 'none' }
-    let navigate = useNavigate();
+    const [ show, setShow ] = useState(false);
+
     const signin = () => {
-        let path = 'login';
-        setTimeout(navigate(path),);
+        setShow(!show) 
+        
     }
     const better = {
         position: 'absolute',
@@ -32,9 +34,10 @@ export default function Home() {
         position: 'absolute',
         top: '12%',
         right: '5%'
-        
-       
+          
     }
+
+    
 
     return (
         <div>
@@ -94,9 +97,9 @@ export default function Home() {
                 </Toolbar>
 
             </div>
-            <div  style={hai} onClick={render}>
+             {show ? <div  style={hai}>
                 <Login/>
-            </div>
+            </div> : null }
 
 
 

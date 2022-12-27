@@ -1,5 +1,5 @@
 import { Grid, TextField, Switch, FormControlLabel, FormGroup, Button, Link, Typography } from "@material-ui/core";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./login.css";
 import { useNavigate } from 'react-router-dom';
 import IconButton from '@material-ui/core/iconbutton';
@@ -33,19 +33,21 @@ const Login = (props) => {
     const [password, setPassword] = useState("");
     const [nameErr, setNameErr] = useState(false);
     const [passwordErr, setPasswordErr] = useState(false);
+    const [nextpage, setNextPage] = useState(false);
+
+
+    useEffect( () => { 
+        let path = '/profile';
+        navigate(path, { 
+            replace: true,
+            state: { name, password }
+        });
+            }, [nextpage])
 
     let navigate = useNavigate();
     const profile = (e) => {
 
-        validate(e);
-        let path = '/profile';
-        console.log("nameError", nameErr)
-        if (!nameErr && !passwordErr) {
-            navigate(path, {
-                replace: true,
-                state: { name, password }
-            });
-        }
+        validate(e);  
     }
 
 
@@ -54,14 +56,15 @@ const Login = (props) => {
         if (name.length < 4) {
             console.log("name", name)
             setNameErr(true)
-            
+
         } else if (password.length < 6) {
             setPasswordErr(true)
         } else {
             setNameErr(false);
             setPasswordErr(false);
+            setNextPage(true);
         }
-
+        // this.forceUpdate()
         e.preventDefault()
     }
 
@@ -131,7 +134,7 @@ const Login = (props) => {
                                 variant="outlined"
 
                                 fullWidth />
-                                {passwordErr && (
+                            {passwordErr && (
                                 <span className="errormsg">
                                     invalid password
                                 </span>
@@ -139,7 +142,7 @@ const Login = (props) => {
                             <FormGroup style={rem}>
                                 <FormControlLabel className="remem" style={rem2} control={<Switch />} label="Remember me" />
                             </FormGroup>
-                            <Button className="but" style={sign} type="Submit" validate="" variant="contained" onClick={profile} fullWidth  >SIGN IN</Button>
+                            <Button className="but" style={sign} type="Submit" validate="" variant="contained" onClick={profile} fullWidth >SIGN IN</Button>
                         </form>
 
                         <Typography style={dont} align="center"> Don't have an account?
