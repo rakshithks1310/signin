@@ -6,7 +6,7 @@
     align-items: center;
 }
 .hai{
-    margin-top: 160px;
+    
     position: relative;
 }
 
@@ -33,5 +33,7 @@
     background: linear-gradient(15deg, #373975 20%, #c4497b 80%);
     
 }
-.remem{
+.errormsg{
+    color: red;
+    font-size: 14px;
 }
