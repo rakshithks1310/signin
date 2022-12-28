@@ -1,4 +1,3 @@
-
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -58,7 +57,7 @@ export default function Home() {
                                 fontWeight: 700,
                                 letterSpacing: '.1rem',
                                 color: 'lightgreen',
-                                cursor: 'default'
+                                cursor: 'default',
                             }}
                         >
                             Better
