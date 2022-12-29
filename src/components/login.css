@@ -4,6 +4,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
+}
+body{
+    /* background-image: url(/src/images/bg2.jpeg);
+    background-size: cover; */
+    background-color: #373975;
+
 }
 .hai{
     
@@ -36,4 +43,5 @@
 .errormsg{
     color: red;
     font-size: 14px;
+    padding-bottom: 5px;
 }
