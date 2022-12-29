@@ -28,26 +28,37 @@ import {
 } from "recharts";
 
 const data = [
-  { name: "Facebook", users: 2000000000 },
-  { name: "Instagram", users: 1500000000 },
-  { name: "Twiter", users: 1000000000 },
-  { name: "Telegram", users: 500000000 },
+  { name: "Facebook", users: 200000000 },
+  { name: "Instagram", users: 150000000 },
+  { name: "Twiter", users: 100000000 },
+  { name: "Telegram", users: 50000000 },
 ];
 
 const chart = {
   display: 'flex',
   flexDirection: 'row',
-  marginTop: '10%'
+  marginTop: '15%',
+  justifyContent:'space-around'
+
 }
-const div1={
+const div_first={
+  marginTop:'15px',
   display:'flex',
   flexDirection:'row',
-  justifyContent:'space-around'
+  marginBottom:'30px',
+  marginRight:'25px',
+  justifyContent: 'space-around'
   
 }
+
 const div_inside={
-  width:'200px',
-  height: '50px'
+  width:'300px',
+  height: '88px',
+  marginRight:'35px',
+  borderRadius:'5px',
+  border:'none',
+  fontSize:'16px',
+  fontFamily:'arial'
 }
 const pages = [];
 const navItems = ['Enroll', 'Members'];
@@ -58,7 +69,6 @@ const buttt = {
 }
 const barchart = {
 
-  width: '50%',
   display: 'flex',
   alignItem: 'center',
   margin: ' 0 0 0 50px '
@@ -303,13 +313,13 @@ function Profile(props) {
             <Row >
               <Col>
                 <BarChart
-                  width={500}
-                  height={300}
+                  width={600}
+                  height={400}
                   data={data}
                   margin={{
-                    top: 15,
+                    top: 10,
                     right: 30,
-                    left: 80,
+                    left: 30,
                     bottom: 5,
                   }}
                   barSize={20}
@@ -317,7 +327,7 @@ function Profile(props) {
                   <XAxis
                     dataKey="name"
                     scale="point"
-                    padding={{ left: 10, right: 10 }}
+                    padding={{ left: 0, right: 10 }}
                   />
                   <YAxis />
                   <Tooltip />
@@ -336,34 +346,34 @@ function Profile(props) {
 
 
         </div>
-        <div>
-          <div style={div1}>
+        <div className='split'>
+          <div style={div_first}>
 
             <div >
-              <button style={div_inside}></button>
+              <button style={div_inside}> &#x2624; Ambulance</button>
             </div>
 
             <div>
-              <button style={div_inside}></button>
+              <button style={div_inside}>&#x2706; Phone</button>
             </div>
           </div>
 
-          <div style={div1}>
+          <div style={div_first}>
             <div>
-              <button style={div_inside}></button>
+              <button style={div_inside}>&#x2620; Danger</button>
             </div>
 
             <div>
-              <button style={div_inside}></button>
+              <button style={div_inside}>&#x266B; MP3</button>
             </div>
           </div>
 
-          <div style={div1}>
+          <div style={div_first}>
             <div>
-              <button style={div_inside}></button>
+              <button style={div_inside}>&#x2623; Repeat</button>
             </div>
             <div>
-              <button style={div_inside}></button>
+              <button style={div_inside}>&#x2713; Done</button>
             </div>
           </div>
         </div>
