@@ -6,26 +6,19 @@ import IconButton from '@material-ui/core/iconbutton';
 import Box from '@mui/material/Box';
 import { useForm } from "react-hook-form";
 import FacebookIcon from '@mui/icons-material/Facebook';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import GoogleIcon from '@mui/icons-material/Google';
 
 
 const Login = (props) => {
 
 
-    // const {
-    //     register,
-    //     handleSubmit,
-    //     watch,
-    //     formState: { errors },
-    //     } = useForm();
-    // const onSubmit=(data) => {
-    //     console.log(data);
-    //     //  registerAccount(data);
-    // };
+   
     const paperstyle = { padding: 20, height: '380px', width: 310 }
     const text = { margin: '15px 0' }
     const rem = { margin: '8px 0' }
     const rem2 = { fontSize: '10px', color: 'grey', width: '170px' }
-    const sign = { margin: '20px 0', fontSize: "12px", fontWeight: 'bold', fontColour: 'white', height: "32px", borderRadius: "5px" }
+    const sign = { margin: '20px 0', fontSize: "12px", fontWeight: 'bold', fontColour: 'white', height: "32px", borderRadius: "5px", color:'white' }
     const dont = { margin: '10px', fontSize: '11px', color: 'grey' }
     const sign_link = { fontWeight: 'bold', color: 'red' }
     const paperstyle1 = { padding: 5, height: '100px', width: 300, margin: "20px auto" }
@@ -34,7 +27,14 @@ const Login = (props) => {
     const [nameErr, setNameErr] = useState(false);
     const [passwordErr, setPasswordErr] = useState(false);
     const [nextpage, setNextPage] = useState(false);
-
+    const [ nameError, setNameError] = useState(false);
+    const [passwordError, setPasswordError] = useState(false);
+    const icons ={
+        display:'flex',
+        flexDirection:'row',
+        justifyContent: ' space-around',
+        marginBottom:'5px'
+    }
 
     useEffect( () => { 
         let path = '/profile';
@@ -53,16 +53,30 @@ const Login = (props) => {
 
 
     function validate(e) {
-        if (name.length < 4) {
+        if (name.length == "") {
+            console.log("name", name)
+            setNameError(true)
+        }
+        else if (name.length < 4) {
             console.log("name", name)
             setNameErr(true)
 
-        } else if (password.length < 6) {
+        } else if (password.length == "") {
+            console.log("password", password)
+            setPasswordError(true)
+        }
+         else if (password.length < 6) {
             setPasswordErr(true)
         } else {
-            setNameErr(false);
-            setPasswordErr(false);
-            setNextPage(true);
+            
+            setTimeout(() => {
+                setNameError(false);
+                setNameErr(false);
+                setPasswordError(false);
+                setPasswordErr(false);
+                setNextPage(true);
+
+              }, 2000); 
         }
         // this.forceUpdate()
         e.preventDefault()
@@ -73,29 +87,19 @@ const Login = (props) => {
 
     return (
 
-        <div className="main">
+        <div className="main full-screen bg-home">
 
 
             <Grid>
                 <Grid align="center" className="hai" >
                     <div style={paperstyle1} className="paper1" >
                         <h2>Sign in</h2>
-                        {/* <Grid direction="row" alignItems="center" spacing={2}>
-                        <Button variant="contained" component="label">
-                            FB
-                            <input hidden accept="image/*" multiple type="file" />
-                        </Button> <Button variant="contained" component="label">
-                            Git
-                            <input hidden accept="image/*" multiple type="file" />
-                        </Button> <Button variant="contained" component="label">
-                            Goo
-                            <input hidden accept="image/*" multiple type="file" />
-                        </Button>
-                        <IconButton color="primary"  component="label">
-                            <input hidden accept="image/*" />
-                            
-                        </IconButton>
-                    </Grid> */}
+                        <div style={icons}>
+                        <FacebookIcon/>
+                        <GitHubIcon/>
+                        <GoogleIcon/>
+                        </div>
+                        
                     </div>
                 </Grid>
                 <div style={paperstyle} className="hey">
@@ -106,8 +110,12 @@ const Login = (props) => {
                                 hiddenLabel
                                 id="filled-hidden-label-small"
                                 value={name}
-                                onChange={(e) =>
-                                    setName(e.target.value)}
+                                onChange={(e) =>{
+                                    setName(e.target.value);
+                                    setNameError(false);
+                                }
+                                }
+
                                 variant="filled"
                                 size="small"
                                 label="User Name"
@@ -116,10 +124,20 @@ const Login = (props) => {
 
                                 fullWidth />
                             {nameErr && (
-                                <span className="errormsg">
-                                    invalid username
-                                </span>
+                                
+                                <div className="errormsg">
+                                    <span >
+                                invalid username
+                                    </span>
+                                </div>
                             )}
+                            {
+                                nameError && (
+                                    <span className="errormsg">
+                                        enter min 4 characters
+                                    </span>
+                                )
+                            }
 
                             <TextField
                                 hiddenLabel
@@ -139,6 +157,14 @@ const Login = (props) => {
                                     invalid password
                                 </span>
                             )}
+                            {
+                                passwordError && (
+                                    <span className="errormsg">
+                                        enter min 6 characters
+                                    </span>
+                                )
+                            }
+
                             <FormGroup style={rem}>
                                 <FormControlLabel className="remem" style={rem2} control={<Switch />} label="Remember me" />
                             </FormGroup>

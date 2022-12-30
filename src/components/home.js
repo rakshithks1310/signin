@@ -13,8 +13,10 @@ export default function Home() {
     const sign_but = { color: 'white', position: 'absolute', right: '6%', top: '60px', fontSize: '24px', textTransform: 'none' }
     const [ show, setShow ] = useState(false);
 
-    const signin = () => {
-        setShow(!show) 
+    const signin = () => {setTimeout(() => {
+        setShow(!show)
+    }, 500);
+         
         
     }
     const better = {
@@ -39,7 +41,7 @@ export default function Home() {
     
 
     return (
-        <div>
+        <div className='overlay'>
 
             <div>
                 <div style={better1}>
@@ -53,9 +55,9 @@ export default function Home() {
                             sx={{
                                 mr: 2,
                                 display: { md: 'flex' },
-                                fontFamily: 'rebel',
-                                fontWeight: 700,
-                                letterSpacing: '.1rem',
+                                fontFamily: 'rebel !important',
+                                fontWeight: `${700} !important`,
+                                letterSpacing: '.1rem !important',
                                 color: 'lightgreen',
                                 cursor: 'default',
                             }}
@@ -73,10 +75,10 @@ export default function Home() {
                             sx={{
                                 mr: 2,
                                 display: { md: 'flex' },
-                                fontWeight: 1000,
-                                letterSpacing: '.001rem',
+                                fontWeight: `${1000} !important`,
+                                letterSpacing: '.001rem !important',
                                 color: 'lightgreen',
-                                margin: '-5px 0',
+                                margin: '-5px 0 !important',
                                 cursor: 'default'
                             }}
                         >
@@ -112,9 +114,9 @@ export default function Home() {
                             sx={{
                                 mr: 2,
                                 display: { md: 'flex' },
-                                fontFamily: 'rebel',
-                                fontWeight: 700,
-                                letterSpacing: '.2rem',
+                                fontFamily: 'rebel !important',
+                                fontWeight: `${700} !important`,
+                                letterSpacing: '.2rem !important',
                                 color: 'Orange',
                                 cursor: 'default'
                             }}
@@ -132,10 +134,10 @@ export default function Home() {
                             sx={{
                                 mr: 2,
                                 display: { md: 'flex' },
-                                fontWeight: 1000,
-                                letterSpacing: '.001rem',
+                                fontWeight: `${1000} !important`,
+                                letterSpacing: '.001rem !important',
                                 color: 'Orange',
-                                margin: '-5px 0',
+                                margin: '-5px 0 !important',
                                 cursor: 'default'
                             }}
                         >
