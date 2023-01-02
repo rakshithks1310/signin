@@ -49,8 +49,9 @@ export default function Home() {
 
                     <div>
                         <Typography
-                            variant="h5"
-                            noWrap
+                            variant=""
+                            fontSize={24}
+                            //noWrap
                             component="a"
                             sx={{
                                 mr: 2,
@@ -68,8 +69,9 @@ export default function Home() {
 
                     <div>
                         <Typography
-                            variant="h5"
-                            noWrap
+                            variant=""
+                            //noWrap
+                            fontSize={25}
                             component="a"
 
                             sx={{
@@ -78,7 +80,7 @@ export default function Home() {
                                 fontWeight: `${1000} !important`,
                                 letterSpacing: '.001rem !important',
                                 color: 'lightgreen',
-                                margin: '-5px 0 !important',
+                                margin: '-10px 0 !important',
                                 cursor: 'default'
                             }}
                         >
@@ -108,16 +110,17 @@ export default function Home() {
                 <div>
                     <div>
                         <Typography
-                            variant="h3"
-                            noWrap
-                            component="a"
+                            variant=""
+                            // noWrap
+                            fontSize={48}
+                            //component="a"
                             sx={{
                                 mr: 2,
                                 display: { md: 'flex' },
                                 fontFamily: 'rebel !important',
                                 fontWeight: `${700} !important`,
                                 letterSpacing: '.2rem !important',
-                                color: 'Orange',
+                                color: '#de7335',
                                 cursor: 'default'
                             }}
                         >
@@ -127,17 +130,18 @@ export default function Home() {
 
                     <div>
                         <Typography
-                            variant="h2"
-                            noWrap
-                            component="a"
+                            variant=""
+                            // noWrap
+                            // component="a"
+                            fontSize={60}
 
                             sx={{
                                 mr: 2,
                                 display: { md: 'flex' },
                                 fontWeight: `${1000} !important`,
                                 letterSpacing: '.001rem !important',
-                                color: 'Orange',
-                                margin: '-5px 0 !important',
+                                color: '#de7335',
+                                margin: '-28px 0 !important',
                                 cursor: 'default'
                             }}
                         >

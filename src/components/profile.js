@@ -38,27 +38,27 @@ const chart = {
   display: 'flex',
   flexDirection: 'row',
   marginTop: '15%',
-  justifyContent:'space-around'
-
-}
-const div_first={
-  marginTop:'15px',
-  display:'flex',
-  flexDirection:'row',
-  marginBottom:'30px',
-  marginRight:'25px',
   justifyContent: 'space-around'
-  
+
+}
+const div_first = {
+  marginTop: '15px',
+  display: 'flex',
+  flexDirection: 'row',
+  marginBottom: '30px',
+  marginLeft: '25px',
+  justifyContent: 'space-around'
+
 }
 
-const div_inside={
-  width:'300px',
+const div_inside = {
+  width: '300px',
   height: '88px',
-  marginRight:'35px',
-  borderRadius:'5px',
-  border:'none',
-  fontSize:'16px',
-  fontFamily:'arial'
+  marginRight: '35px',
+  borderRadius: '5px',
+  border: 'none',
+  fontSize: '16px',
+  fontFamily: 'arial'
 }
 const pages = [];
 const navItems = ['Enroll', 'Members'];
@@ -129,7 +129,7 @@ function Profile(props) {
                       fontFamily: 'rebel',
                       fontWeight: 700,
                       letterSpacing: '.1rem',
-                      color: 'ORANGE',
+                      color: '#e66e32',
                       cursor: 'default'
                     }}
                   >
@@ -148,7 +148,7 @@ function Profile(props) {
                       display: { xs: 'none', md: 'flex' },
                       fontWeight: 1000,
                       letterSpacing: '.2rem',
-                      color: 'ORANGE',
+                      color: '#e66e32',
                       margin: '-5px 0',
                       cursor: 'default'
                     }}
@@ -199,7 +199,7 @@ function Profile(props) {
               <div className='loyal'>
                 <Typography
                   variant="h6"
-                  noWrap
+                  //noWrap
                   component="a"
 
                   sx={{
@@ -210,7 +210,7 @@ function Profile(props) {
                     fontWeight: 700,
                     fontSize: 18,
                     letterSpacing: '.1rem',
-                    color: 'Orange',
+                    color: '#e66e32',
                     textDecoration: 'none',
                   }}
                 >
@@ -229,7 +229,7 @@ function Profile(props) {
                     flexGrow: 1,
                     fontWeight: 1000,
                     letterSpacing: '.1rem',
-                    color: 'Orange',
+                    color: '#e66e32',
                     margin: '-6px 0',
                     textDecoration: 'none',
                   }}
@@ -244,14 +244,14 @@ function Profile(props) {
                     key={page}
                     onClick={handleCloseNavMenu}
 
-                    sx={{ my: 3, color: 'orange', display: 'block' }}
+                    sx={{ my: 3, color: '#e37e44', display: 'block' }}
                   >
                   </Button>
                 ))}
               </Box>
               <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                 {navItems.map((item) => (
-                  <Button style={buttt} key={item} sx={{ color: 'orange' }}>
+                  <Button style={buttt} key={item} sx={{ color: '#e37e44' }}>
                     {item}
                   </Button>
                 ))}
@@ -299,6 +299,38 @@ function Profile(props) {
 
       <div style={chart}>
 
+        <div className='split'>
+          <div style={div_first}>
+
+            <div >
+              <button style={div_inside}> &#x2624; Ambulance</button>
+            </div>
+
+            <div>
+              <button style={div_inside}>&#x2706; Phone</button>
+            </div>
+          </div>
+
+          <div style={div_first}>
+            <div>
+              <button style={div_inside}>&#x2620; Danger</button>
+            </div>
+
+            <div>
+              <button style={div_inside}>&#x266B; MP3</button>
+            </div>
+          </div>
+
+          <div style={div_first}>
+            <div>
+              <button style={div_inside}>&#x2623; Repeat</button>
+            </div>
+            <div>
+              <button style={div_inside}>&#x2713; Done</button>
+            </div>
+          </div>
+        </div>
+
         <div style={barchart}>
 
           <Container>
@@ -334,41 +366,8 @@ function Profile(props) {
             </Row>
 
           </Container>
-
-
-
         </div>
-        <div className='split'>
-          <div style={div_first}>
-
-            <div >
-              <button style={div_inside}> &#x2624; Ambulance</button>
-            </div>
-
-            <div>
-              <button style={div_inside}>&#x2706; Phone</button>
-            </div>
-          </div>
-
-          <div style={div_first}>
-            <div>
-              <button style={div_inside}>&#x2620; Danger</button>
-            </div>
-
-            <div>
-              <button style={div_inside}>&#x266B; MP3</button>
-            </div>
-          </div>
-
-          <div style={div_first}>
-            <div>
-              <button style={div_inside}>&#x2623; Repeat</button>
-            </div>
-            <div>
-              <button style={div_inside}>&#x2713; Done</button>
-            </div>
-          </div>
-        </div>
+        
 
       </div>
 
