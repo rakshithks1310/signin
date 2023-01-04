@@ -1,8 +1,17 @@
 .charge{
-    background-color: white;
+    background-color:  #002D70 ;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+.para{
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding-right: 35px;
+}
+.icon{
+    background-color: #002D70;
 }
 
 

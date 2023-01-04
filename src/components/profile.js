@@ -44,7 +44,7 @@ const chart = {
 
 }
 const div_first = {
-  marginTop: '15px',
+   marginTop: '-25px',
   display: 'flex',
   flexDirection: 'row',
   marginBottom: '30px',
@@ -251,7 +251,7 @@ function Profile(props) {
                   </Button>
                 ))}
               </Box>
-              <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+              <Box sx={{ display: { xs: 'none', sm: 'block'  } }}>
                 {navItems.map((item)  => (
                   <Button style={buttt} key={item} sx={{ color: '#e37e44', textTransform:'none', fontSize:'18px' }}>
                     {item}
@@ -263,7 +263,7 @@ function Profile(props) {
               <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title="Open settings">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar alt={state.name} src="" />
+                    <Avatar alt={state.name} src="" className='icon'  />
                   </IconButton>
                 </Tooltip>
                 <Menu
@@ -305,30 +305,36 @@ function Profile(props) {
           <div style={div_first}>
 
             <div >
-              <button style={div_inside}> &#x2624; Ambulance</button>
+            <p className='para'>  &#x2624; Ambulance</p>
+              <button style={div_inside}>10</button>
             </div>
 
             <div>
-              <button style={div_inside}>&#x2706; Phone</button>
+            <p className='para'>&#x2706; Phone</p>
+              <button style={div_inside}>25</button>
             </div>
           </div>
 
           <div style={div_first}>
             <div>
-              <button style={div_inside}>&#x2620; Danger</button>
+            <p className='para'>&#x2620; Danger</p>
+              <button style={div_inside}>4</button>
             </div>
 
             <div>
-              <button style={div_inside}>&#x266B; MP3</button>
+            <p className='para'>&#x266B; MP3</p>
+              <button style={div_inside}>89</button>
             </div>
           </div>
 
           <div style={div_first}>
             <div>
-              <button style={div_inside}>&#x2623; Repeat</button>
+            <p className='para'>&#x2623; Repeat</p>
+              <button style={div_inside}>78</button>
             </div>
             <div>
-              <button style={div_inside}>&#x2713; Done</button>
+            <p className='para'>&#x2713; Done</p>
+              <button style={div_inside}>15</button>
             </div>
           </div>
         </div>
@@ -339,8 +345,8 @@ function Profile(props) {
             <Row >
               <Col>
                 <BarChart
-                  width={600}
-                  height={400}
+                  width={620}
+                  height={460}
                   data={data}
                   margin={{
                     top: 10,

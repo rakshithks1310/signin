@@ -9,12 +9,13 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import GoogleIcon from '@mui/icons-material/Google';
 import CircularProgress from '@mui/material/CircularProgress';
+import Backdrop from '@mui/material/Backdrop';
 
 
 const Login = (props) => {
 
 
-   
+    const [open, setOpen] = useState(false);
     const paperstyle = { padding: 20, height: '380px', width: 310 }
     const text = { margin: '15px 0' }
     const rem = { margin: '8px 0' }
@@ -47,7 +48,7 @@ const Login = (props) => {
 
     let navigate = useNavigate();
     const profile = (e) => {
-
+        setOpen(!open);
         validate(e);  
     }
 
@@ -71,17 +72,23 @@ const Login = (props) => {
         } else {
             
             setTimeout(() => {
+               
                 setNameError(false);
                 setNameErr(false);
                 setPasswordError(false);
                 setPasswordErr(false);
                 setNextPage(true);
+                // setOpen(!open);
 
-              }, 2000); 
+              }, 1000); 
         }
         // this.forceUpdate()
         e.preventDefault()
     }
+
+    const handleClose = () => {
+        setOpen(false);
+      };
 
 
 
@@ -128,14 +135,14 @@ const Login = (props) => {
                                 
                                 <div className="errormsg">
                                     <span >
-                                invalid username
+                                    &#9888; Invalid username
                                     </span>
                                 </div>
                             )}
                             {
                                 nameError && (
                                     <span className="errormsg">
-                                        enter min 4 characters
+                                        &#x26A0; Enter min 4 characters
                                     </span>
                                 )
                             }
@@ -155,13 +162,13 @@ const Login = (props) => {
                                 fullWidth />
                             {passwordErr && (
                                 <span className="errormsg">
-                                    invalid password
+                                   &#9888; Invalid password
                                 </span>
                             )}
                             {
                                 passwordError && (
                                     <span className="errormsg">
-                                        enter min 6 characters
+                                        &#9888; Enter min 6 characters
                                     </span>
                                 )
                             }
@@ -170,7 +177,13 @@ const Login = (props) => {
                                 <FormControlLabel className="remem" style={rem2} control={<Switch />} label="Remember me" />
                             </FormGroup>
                             <Button className="but" style={sign} type="Submit" validate="" variant="contained" onClick={profile} fullWidth >SIGN IN</Button>
-                            
+                            <Backdrop
+                                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                                open={open}
+                                onClick={handleClose}
+                            >
+                                <CircularProgress color="inherit" />
+                            </Backdrop>
                         </form>
 
                         <Typography style={dont} align="center"> Don't have an account?
