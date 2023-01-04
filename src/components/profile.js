@@ -15,6 +15,7 @@ import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import { TextField } from "@material-ui/core";
+import "./profile.css"
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -26,6 +27,7 @@ import {
   CartesianGrid,
   Bar,
 } from "recharts";
+import { textTransform } from '@mui/system';
 
 const data = [
   { name: "Facebook", users: 200000000 },
@@ -109,7 +111,7 @@ function Profile(props) {
 
 
   return (
-    <div>
+    <div className='charge'>
       <div>
 
 
@@ -250,8 +252,8 @@ function Profile(props) {
                 ))}
               </Box>
               <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                {navItems.map((item) => (
-                  <Button style={buttt} key={item} sx={{ color: '#e37e44' }}>
+                {navItems.map((item)  => (
+                  <Button style={buttt} key={item} sx={{ color: '#e37e44', textTransform:'none', fontSize:'18px' }}>
                     {item}
                   </Button>
                 ))}

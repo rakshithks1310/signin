@@ -8,6 +8,7 @@ import Login from './login';
 import Profile from './profile';
 import { render } from '@testing-library/react';
 import React, { useState } from "react";
+// import "./home.css"
 
 export default function Home() {
     const sign_but = { color: 'white', position: 'absolute', right: '6%', top: '60px', fontSize: '24px', textTransform: 'none' }
