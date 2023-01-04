@@ -44,18 +44,18 @@ const chart = {
 
 }
 const div_first = {
-   marginTop: '-25px',
+  marginTop: '-55px',
   display: 'flex',
   flexDirection: 'row',
-  marginBottom: '30px',
-  marginLeft: '25px',
+  marginBottom: '60px',
+  marginLeft: '35px',
   justifyContent: 'space-around'
 
 }
 
 const div_inside = {
-  width: '300px',
-  height: '88px',
+  width: '280px',
+  height: '85px',
   marginRight: '35px',
   borderRadius: '5px',
   border: 'none',
@@ -73,7 +73,7 @@ const barchart = {
 
   display: 'flex',
   alignItem: 'center',
-  margin: ' 0 0 0 50px '
+  margin: ' 0 0 0 40px '
 
 }
 
@@ -251,9 +251,9 @@ function Profile(props) {
                   </Button>
                 ))}
               </Box>
-              <Box sx={{ display: { xs: 'none', sm: 'block'  } }}>
-                {navItems.map((item)  => (
-                  <Button style={buttt} key={item} sx={{ color: '#e37e44', textTransform:'none', fontSize:'18px' }}>
+              <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                {navItems.map((item) => (
+                  <Button style={buttt} key={item} sx={{ color: '#e37e44', textTransform: 'none', fontSize: '18px' }}>
                     {item}
                   </Button>
                 ))}
@@ -263,7 +263,7 @@ function Profile(props) {
               <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title="Open settings">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar alt={state.name} src="" className='icon'  />
+                    <Avatar alt={state.name} src="" className='icon' />
                   </IconButton>
                 </Tooltip>
                 <Menu
@@ -305,35 +305,35 @@ function Profile(props) {
           <div style={div_first}>
 
             <div >
-            <p className='para'>  &#x2624; Ambulance</p>
+              <p className='para'>  &#x2624; Ambulance</p>
               <button style={div_inside}>10</button>
             </div>
 
             <div>
-            <p className='para'>&#x2706; Phone</p>
+              <p className='para'>&#x2706; Phone</p>
               <button style={div_inside}>25</button>
             </div>
           </div>
 
           <div style={div_first}>
             <div>
-            <p className='para'>&#x2620; Danger</p>
+              <p className='para'>&#x2620; Danger</p>
               <button style={div_inside}>4</button>
             </div>
 
             <div>
-            <p className='para'>&#x266B; MP3</p>
+              <p className='para'>&#x266B; MP3</p>
               <button style={div_inside}>89</button>
             </div>
           </div>
 
           <div style={div_first}>
             <div>
-            <p className='para'>&#x2623; Repeat</p>
+              <p className='para'>&#x2623; Repeat</p>
               <button style={div_inside}>78</button>
             </div>
             <div>
-            <p className='para'>&#x2713; Done</p>
+              <p className='para'>&#x2713; Done</p>
               <button style={div_inside}>15</button>
             </div>
           </div>
@@ -359,13 +359,13 @@ function Profile(props) {
                   <XAxis
                     dataKey="name"
                     scale="point"
-                    padding={{ left: 0, right: 10 }}
+                    padding={{ left: 8, right: 10 }}
                   />
                   <YAxis />
                   <Tooltip />
                   <Legend />
                   <CartesianGrid strokeDasharray="3 3" />
-                  <Bar dataKey="users" fill="#8884d8" background={{ fill: "#eee" }} />
+                  <Bar dataKey="users" fill="#9be65e" background={{ fill: "#eee" }} />
                 </BarChart>
               </Col>
 
@@ -375,7 +375,7 @@ function Profile(props) {
 
           </Container>
         </div>
-        
+
 
       </div>
 

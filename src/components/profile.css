@@ -6,9 +6,10 @@
 }
 .para{
     color: white;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
-    padding-right: 35px;
+    align-items: center;
+    font-size: 20px;
 }
 .icon{
     background-color: #002D70;
