@@ -53,3 +53,15 @@ body{
     margin: 0px !important;
     margin-top: 20px !important ;
 }
+
+.MuiInputLabel-formControl {
+    top: 11px !important;
+}
+
+.MuiInputLabel-outlined.MuiInputLabel-shrink {
+    transform: translate(15px, -16px) scale(0.75) !important;
+}
+
+.MuiOutlinedInput-root {
+    height: 60px;
+}

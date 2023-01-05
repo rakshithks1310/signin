@@ -1,24 +1,20 @@
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import { useNavigate } from 'react-router-dom';
-import Login from './login';
-import Profile from './profile';
-import { render } from '@testing-library/react';
 import React, { useState } from "react";
-import "./home.css"
+import "./home.css";
+import Login from './login';
 
 export default function Home() {
     const sign_but = { color: 'white', position: 'absolute', right: '6%', top: '60px', fontSize: '24px', textTransform: 'none' }
-    const [ show, setShow ] = useState(false);
+    const [show, setShow] = useState(false);
 
-    const signin = () => {setTimeout(() => {
-        setShow(!show)
-    }, 500);
-         
-        
+    const signin = () => {
+        setTimeout(() => {
+            setShow(!show)
+        }, 500);
+
+
     }
     const better = {
         position: 'absolute',
@@ -36,10 +32,10 @@ export default function Home() {
         position: 'absolute',
         top: '12%',
         right: '5%'
-          
+
     }
 
-    
+
 
     return (
         <div className='overlay'>
@@ -51,7 +47,7 @@ export default function Home() {
                     <div>
                         <Typography
                             variant=""
-                            fontSize={24}
+                            fontSize={44}
                             //noWrap
                             component="a"
                             sx={{
@@ -60,7 +56,7 @@ export default function Home() {
                                 fontFamily: 'rebel !important',
                                 fontWeight: `${700} !important`,
                                 letterSpacing: '.1rem !important',
-                                color: 'lightgreen',
+                                color: '#75EA64',
                                 cursor: 'default',
                             }}
                         >
@@ -72,7 +68,7 @@ export default function Home() {
                         <Typography
                             variant=""
                             //noWrap
-                            fontSize={25}
+                            fontSize={40}
                             component="a"
 
                             sx={{
@@ -80,9 +76,10 @@ export default function Home() {
                                 display: { md: 'flex' },
                                 fontWeight: `${1000} !important`,
                                 letterSpacing: '.001rem !important',
-                                color: 'lightgreen',
+                                color: '#75EA64',
                                 margin: '-10px 0 !important',
-                                cursor: 'default'
+                                cursor: 'default',
+                                fontFamily: 'Poppins-ExtraBold !important',
                             }}
                         >
                             LIFE
@@ -101,9 +98,9 @@ export default function Home() {
                 </Toolbar>
 
             </div>
-             {show ? <div  style={hai}>
-                <Login/>
-            </div> : null }
+            {show ? <div style={hai}>
+                <Login />
+            </div> : null}
 
 
 
@@ -113,7 +110,7 @@ export default function Home() {
                         <Typography
                             variant=""
                             // noWrap
-                            fontSize={48}
+                            fontSize={85}
                             //component="a"
                             sx={{
                                 mr: 2,
@@ -121,7 +118,7 @@ export default function Home() {
                                 fontFamily: 'rebel !important',
                                 fontWeight: `${700} !important`,
                                 letterSpacing: '.2rem !important',
-                                color: '#de7335',
+                                color: '#F66E1A',
                                 cursor: 'default'
                             }}
                         >
@@ -134,16 +131,16 @@ export default function Home() {
                             variant=""
                             // noWrap
                             // component="a"
-                            fontSize={60}
+                            fontSize={100}
 
                             sx={{
                                 mr: 2,
                                 display: { md: 'flex' },
                                 fontWeight: `${1000} !important`,
                                 letterSpacing: '.001rem !important',
-                                color: '#de7335',
-                                margin: '-28px 0 !important',
-                                cursor: 'default'
+                                color: '#F66E1A',
+                                margin: '-43px 0 !important',
+                                cursor: 'default', fontFamily: 'Poppins-ExtraBold !important',
                             }}
                         >
                             LOYALTY

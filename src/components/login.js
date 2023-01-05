@@ -1,15 +1,9 @@
-import { Grid, TextField, Switch, FormControlLabel, FormGroup, Button, Link, Typography } from "@material-ui/core";
-import React, { useState, useEffect } from "react";
-import "./login.css";
-import { useNavigate } from 'react-router-dom';
-import IconButton from '@material-ui/core/iconbutton';
-import Box from '@mui/material/Box';
-import { useForm } from "react-hook-form";
-import FacebookIcon from '@mui/icons-material/Facebook';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import GoogleIcon from '@mui/icons-material/Google';
-import CircularProgress from '@mui/material/CircularProgress';
+import { Button, FormControlLabel, FormGroup, Grid, Switch, TextField } from "@material-ui/core";
 import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+import React, { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import "./login.css";
 
 
 const Login = (props) => {
@@ -20,36 +14,36 @@ const Login = (props) => {
     const text = { margin: '15px 0' }
     const rem = { margin: '8px 0' }
     const rem2 = { fontSize: '10px', color: 'grey', width: '170px' }
-    const sign = { margin: '20px 0', fontSize: "12px", fontWeight: 'bold', fontColour: 'white', height: "32px", borderRadius: "5px", color:'white' }
+    const sign = { margin: '30px 0', fontSize: "12px", fontWeight: 'bold', fontColour: 'white', height: "40px", borderRadius: "5px", color: 'white' }
     const dont = { margin: '10px', fontSize: '11px', color: 'grey' }
     const sign_link = { fontWeight: 'bold', color: 'red' }
-    const paperstyle1 = { padding: 5, height: '100px', width: 300, margin: "20px auto" }
+    const paperstyle1 = { padding: 5, height: '86px', width: 300, margin: "20px auto" }
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
     const [nameErr, setNameErr] = useState(false);
     const [passwordErr, setPasswordErr] = useState(false);
     const [nextpage, setNextPage] = useState(false);
-    const [ nameError, setNameError] = useState(false);
+    const [nameError, setNameError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
-    const icons ={
-        display:'flex',
-        flexDirection:'row',
+    const icons = {
+        display: 'flex',
+        flexDirection: 'row',
         justifyContent: ' space-around',
-        marginBottom:'5px'
+        marginBottom: '5px'
     }
 
-    useEffect( () => { 
+    useEffect(() => {
         let path = '/profile';
-        navigate(path, { 
+        navigate(path, {
             replace: true,
             state: { name, password }
         });
-            }, [nextpage])
+    }, [nextpage])
 
     let navigate = useNavigate();
     const profile = (e) => {
         setOpen(!open);
-        validate(e);  
+        validate(e);
     }
 
 
@@ -58,29 +52,33 @@ const Login = (props) => {
         if (name.length == "") {
             console.log("name", name)
             setNameError(true)
+            setOpen(false)
         }
         else if (name.length < 4) {
             console.log("name", name)
             setNameErr(true)
+            setOpen(false)
 
         } else if (password.length == "") {
             console.log("password", password)
             setPasswordError(true)
+            setOpen(false)
         }
-         else if (password.length < 6) {
+        else if (password.length < 6) {
             setPasswordErr(true)
+            setOpen(false)
         } else {
-            
+
             setTimeout(() => {
-                setOpen(false);
+                setOpen(true);
                 setNameError(false);
                 setNameErr(false);
                 setPasswordError(false);
                 setPasswordErr(false);
                 setNextPage(true);
-                
 
-              }, 1000); 
+
+            }, 1000);
         }
         // this.forceUpdate()
         e.preventDefault()
@@ -88,7 +86,7 @@ const Login = (props) => {
 
     const handleClose = () => {
         setOpen(false);
-      };
+    };
 
 
 
@@ -103,11 +101,11 @@ const Login = (props) => {
                     <div style={paperstyle1} className="paper1" >
                         <h2>Sign in</h2>
                         <div style={icons}>
-                        <FacebookIcon/>
+                            {/* <FacebookIcon/>
                         <GitHubIcon/>
-                        <GoogleIcon/>
+                        <GoogleIcon/> */}
                         </div>
-                        
+
                     </div>
                 </Grid>
                 <div style={paperstyle} className="hey">
@@ -118,13 +116,13 @@ const Login = (props) => {
                                 hiddenLabel
                                 id="filled-hidden-label-small"
                                 value={name}
-                                onChange={(e) =>{
+                                onChange={(e) => {
                                     setName(e.target.value);
                                     setNameError(false);
                                 }
                                 }
 
-                                variant="filled"
+                                // variant="filled"
                                 size="small"
                                 label="User Name"
                                 variant="outlined"
@@ -132,10 +130,10 @@ const Login = (props) => {
 
                                 fullWidth />
                             {nameErr && (
-                                
+
                                 <div className="errormsg">
                                     <span >
-                                    &#9888; Invalid username
+                                        &#9888; Invalid username
                                     </span>
                                 </div>
                             )}
@@ -162,7 +160,7 @@ const Login = (props) => {
                                 fullWidth />
                             {passwordErr && (
                                 <span className="errormsg">
-                                   &#9888; Invalid password
+                                    &#9888; Invalid password
                                 </span>
                             )}
                             {
@@ -186,9 +184,9 @@ const Login = (props) => {
                             </Backdrop>
                         </form>
 
-                        <Typography style={dont} align="center"> Don't have an account?
+                        {/* <Typography style={dont} align="center"> Don't have an account?
                             <Link href="/ButtonAppBar" style={sign_link} > Sign Up</Link>
-                        </Typography>
+                        </Typography> */}
                     </Grid>
 
 

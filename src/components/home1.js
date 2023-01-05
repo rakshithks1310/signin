@@ -1,9 +1,9 @@
-import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
@@ -13,10 +13,10 @@ export default function Home() {
         let path = 'login';
         setTimeout(navigate(path),);
     }
-    const better={
-        display:'flex',
-        justifyContent:'flex-start',
-        margin:"550px 30px"
+    const better = {
+        display: 'flex',
+        justifyContent: 'flex-start',
+        margin: "550px 30px"
     }
 
 
@@ -60,7 +60,8 @@ export default function Home() {
                                                 letterSpacing: '.001rem',
                                                 color: 'lightgreen',
                                                 margin: '-5px 0',
-                                                cursor: 'default'
+                                                cursor: 'default',
+                                                fontFamily: 'Poppins-ExtraBold !important',
                                             }}
                                         >
                                             LIFE
@@ -86,49 +87,49 @@ export default function Home() {
 
 
             </div>
-                                            <div style={better}>
-                                            <div>
-                                    <div>
-                                        <Typography
-                                            variant="h3"
-                                            noWrap
-                                            component="a"
-                                            sx={{
-                                                mr: 2,
-                                                display: { md: 'flex' },
-                                                fontFamily: 'rebel',
-                                                fontWeight: 700,
-                                                letterSpacing: '.2rem',
-                                                color: 'Orange',
-                                                cursor: 'default'
-                                            }}
-                                        >
-                                            Better
-                                        </Typography>
-                                    </div>
+            <div style={better}>
+                <div>
+                    <div>
+                        <Typography
+                            variant="h3"
+                            noWrap
+                            component="a"
+                            sx={{
+                                mr: 2,
+                                display: { md: 'flex' },
+                                fontFamily: 'rebel',
+                                fontWeight: 700,
+                                letterSpacing: '.2rem',
+                                color: 'Orange',
+                                cursor: 'default'
+                            }}
+                        >
+                            Better
+                        </Typography>
+                    </div>
 
-                                    <div>
-                                        <Typography
-                                            variant="h2"
-                                            noWrap
-                                            component="a"
+                    <div>
+                        <Typography
+                            variant="h2"
+                            noWrap
+                            component="a"
 
-                                            sx={{
-                                                mr: 2,
-                                                display: { md: 'flex' },
-                                                fontWeight: 1000,
-                                                letterSpacing: '.001rem',
-                                                color: 'Orange',
-                                                margin: '-5px 0',
-                                                cursor: 'default'
-                                            }}
-                                        >
-                                            LOYALTY
-                                        </Typography>
+                            sx={{
+                                mr: 2,
+                                display: { md: 'flex' },
+                                fontWeight: 1000,
+                                letterSpacing: '.001rem',
+                                color: 'Orange',
+                                margin: '-5px 0',
+                                cursor: 'default', fontFamily: 'Poppins-ExtraBold !important',
+                            }}
+                        >
+                            LOYALTY
+                        </Typography>
 
-                                    </div>
-                                </div>  
-                                            </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
