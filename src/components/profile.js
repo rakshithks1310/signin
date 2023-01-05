@@ -238,9 +238,15 @@ function Profile(props) {
               </Box>
 
               <Box sx={{ flexGrow: 0 }}>
+<<<<<<< HEAD
                 <Tooltip title="Setting">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }} style={{ width: "60px", height: '60px' }}>
                     <Avatar alt={state.name} src="/" className="icon" />
+=======
+                <Tooltip title="Open settings">
+                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                    <Avatar alt={state.name} src="/" className='icon' />
+>>>>>>> 4237187fe6fd28e551855bab880ee7ed7e990ced
                   </IconButton>
                 </Tooltip>
                 <Menu
