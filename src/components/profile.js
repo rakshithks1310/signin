@@ -39,7 +39,7 @@ const data = [
 const chart = {
   display: 'flex',
   flexDirection: 'row',
-  marginTop: '15%',
+  marginTop: '10%',
   justifyContent: 'space-around'
 
 }
@@ -305,35 +305,36 @@ function Profile(props) {
           <div style={div_first}>
 
             <div >
-              <p className='para'>  &#x2624; Ambulance</p>
+              <p className='para'>Total Members <br/> <br/></p>
+            
               <button style={div_inside}>10</button>
             </div>
 
             <div>
-              <p className='para'>&#x2706; Phone</p>
+              <p className='para'>Members enrolled <br/> in last 30 days</p>
               <button style={div_inside}>25</button>
             </div>
           </div>
 
           <div style={div_first}>
             <div>
-              <p className='para'>&#x2620; Danger</p>
+              <p className='para'>Total Earn <br/> Transactions</p>
               <button style={div_inside}>4</button>
             </div>
 
             <div>
-              <p className='para'>&#x266B; MP3</p>
+              <p className='para'>Earn Transactions <br/>in last 30 days</p>
               <button style={div_inside}>89</button>
             </div>
           </div>
 
           <div style={div_first}>
             <div>
-              <p className='para'>&#x2623; Repeat</p>
+              <p className='para'>Total Redeem <br/>Transactions</p>
               <button style={div_inside}>78</button>
             </div>
             <div>
-              <p className='para'>&#x2713; Done</p>
+              <p className='para'>Redeem Transactions <br/>in last 30 days</p>
               <button style={div_inside}>15</button>
             </div>
           </div>
@@ -346,10 +347,10 @@ function Profile(props) {
               <Col>
                 <BarChart
                   width={620}
-                  height={460}
+                  height={520}
                   data={data}
                   margin={{
-                    top: 10,
+                    top: 40,
                     right: 30,
                     left: 30,
                     bottom: 5,

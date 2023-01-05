@@ -72,13 +72,13 @@ const Login = (props) => {
         } else {
             
             setTimeout(() => {
-               
+                setOpen(false);
                 setNameError(false);
                 setNameErr(false);
                 setPasswordError(false);
                 setPasswordErr(false);
                 setNextPage(true);
-                // setOpen(!open);
+                
 
               }, 1000); 
         }
