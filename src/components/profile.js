@@ -263,7 +263,7 @@ function Profile(props) {
               <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title="Open settings">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar alt={state.name} src="" className='icon' />
+                    <Avatar alt={state.name} src="/" className='icon' />
                   </IconButton>
                 </Tooltip>
                 <Menu

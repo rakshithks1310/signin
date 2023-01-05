@@ -58,21 +58,25 @@ const Login = (props) => {
         if (name.length == "") {
             console.log("name", name)
             setNameError(true)
+            setOpen(false)
         }
         else if (name.length < 4) {
             console.log("name", name)
             setNameErr(true)
+            setOpen(false)
 
         } else if (password.length == "") {
             console.log("password", password)
             setPasswordError(true)
+            setOpen(false)
         }
          else if (password.length < 6) {
             setPasswordErr(true)
+            setOpen(false)
         } else {
             
             setTimeout(() => {
-                setOpen(false);
+                setOpen(true);
                 setNameError(false);
                 setNameErr(false);
                 setPasswordError(false);
