@@ -44,6 +44,10 @@
 .member1{
     margin-left: 20%;
 }
+.member_div{
+    margin-left: 15px;
+    padding-right: 15px;
+}
 .type{
     background-color: aqua;
 }   
@@ -62,18 +66,46 @@
     margin-bottom: 20px;
 }
 .invoice{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
     margin-right: 35%;
+  
 }
 
 .clear_button{
     background-color: rgb(87, 98, 156);
     border-style: solid;
     border-width: 1px;
-    padding: 2px 15px 2px 15px;
+    padding: 8px 25px 8px 25px;
     color: white;
     font-weight: bold;
-    margin-right: 20px;
 }
 .hello{
     margin-left: 50px;
 }
+.f1{
+    
+    padding-right: 15px;
+}
+.f2{
+ 
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.f3{
+    
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.f4{
+  
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.f5{
+    padding-bottom: 15px;
+    padding-top: 15px; 
+}
+

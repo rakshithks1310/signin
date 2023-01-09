@@ -18,7 +18,16 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import TextField from '@mui/material/TextField';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import Box from '@mui/material/Box';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -48,10 +57,7 @@ function createData(name, calories, fat, carbs, protein, Store_Details, Till_No,
 
 const rows = [
     createData("16-08-2019", "Easyday Yearly Membership", "62300496866657", "Primary", "Enrollment", "3451 ED-HO Store", "00065", 4558, "03-03-20180", 999, 0, 50000),
-    // createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    // createData('Eclair', 262, 16.0, 24, 6.0),
-    // createData('Cupcake', 305, 3.7, 67, 4.3),
-    // createData('Gingerbread', 356, 16.0, 49, 3.9),
+
 ];
 
 export default function Dash() {
@@ -114,14 +120,19 @@ export default function Dash() {
 
     const [age, setAge] = React.useState('');
 
+    const [value, setValue] = React.useState(null);
 
+    let navigate = useNavigate();
+    const goBack=()=>{
+        navigate(-1);
+    }
 
 
     return (
         <div className="drop">
 
             <div className="top">
-                <div><a href="/">Go Back</a ></div>
+                <div onClick={goBack}>Go Back</div>
                 <div className="top_div_2">::: Customer Dashboard:::</div>
             </div>
             <div className="main">
@@ -166,17 +177,30 @@ export default function Dash() {
                             </div>
                             <div className="personal">
                                 <div>
-                                    <p><b>Name</b> : Mahesh J</p>
-                                    <p><b>Email</b> : maheshj@gamil.com</p>
-                                    <p><b>Old Mobile</b> :</p>
-                                    <p><b>City</b> : Bangalore</p>
-                                    <p><b>State</b> : Karnataka</p>
+                                    <p><b>Name</b> </p>
+                                    <p><b>Email</b> </p>
+                                    <p><b>Old Mobile</b> </p>
+                                    <p><b>City</b> </p>
+                                    <p><b>State</b></p>
+                                </div>
+                                <div className="member_div">
+                                    <p>: Mahesh J</p>
+                                    <p>: maheshj@gamil.com</p>
+                                    <p>: </p>
+                                    <p>: Bangalore</p>
+                                    <p>: Karnataka</p>
                                 </div>
                                 <div className="personal1">
-                                    <p><b>DOB</b> : 05-06-1867 </p>
-                                    <p><b>Mobile</b> : 9999999999</p>
-                                    <p><b>Address</b> : Bsk 3rd stage <br />bangalore </p>
-                                    <p><b>Pincoded</b> : 560085</p>
+                                    <p><b>DOB</b>  </p>
+                                    <p><b>Mobile</b> </p>
+                                    <p><b>Address</b> </p>
+                                    <p><b>Pincoded</b> </p>
+                                </div>
+                                <div className="member_div">
+                                    <p>: 05-06-1867</p>
+                                    <p>: 9999999999</p>
+                                    <p>: Bsk 3rd stage bangalore </p>
+                                    <p>: 560085</p>
                                 </div>
                             </div>
                         </Typography>
@@ -192,18 +216,33 @@ export default function Dash() {
                     <AccordionDetails>
                         <Typography>
                             <div className="member">
+
                                 <div>
-                                    <p><b>Program </b> : Easyday Club</p>
-                                    <p><b>Membership Id</b> : 2100113296</p>
-                                    <p><b>Register on</b> : 16-08-2019</p>
-                                    <p><b>Card Status</b> : ACTIVE</p>
-                                    <p><b>Referred By</b> : </p>
+                                    <p><b>Program </b> </p>
+                                    <p><b>Membership ID </b> </p>
+                                    <p><b>Register on</b> </p>
+                                    <p><b>Card Status</b> </p>
+                                    <p><b>Referred By</b>  </p>
                                 </div>
+                                <div className="member_div">
+                                    <p>: Easyday Club</p>
+                                    <p>: 2100113296</p>
+                                    <p>: 16-08-2019</p>
+                                    <p>: ACTIVE</p>
+                                    <p>: </p>
+                                </div>
+
                                 <div className="member1">
-                                    <p><b>Scheme</b> : Easyday Club </p>
-                                    <p><b>Purchase Limit</b> : 50000.00</p>
-                                    <p><b>Card no</b> : 62300496866657<br />bangalore </p>
-                                    <p><b>Registered Store</b> : 3451-ED-HO Store</p>
+                                    <p><b>Scheme</b>  </p>
+                                    <p><b>Purchase Limit</b> </p>
+                                    <p><b>Card no</b>  </p>
+                                    <p><b>Registered Store</b> </p>
+                                </div>
+                                <div className="member_div">
+                                    <p>: Easyday Club</p>
+                                    <p>: 50000.00</p>
+                                    <p>: 62300496866657 </p>
+                                    <p>: 3451-ED-HO Store</p>
                                 </div>
 
                             </div>
@@ -220,36 +259,60 @@ export default function Dash() {
                     <AccordionDetails>
                         <Typography>
                             <div className="from">
-                               <div className="invoice">
-                               From <input id></input> To <input></input> <button className="clear_button">Clear</button> <b>Invoice amount: </b>  
-                               
-                               </div>
-                                
-                                <input></input>
-                               
-                                
-                                
-                                
-                                {/* <div>
-                                    <FormControl sx={{ m: 3, minWidth: 280 }}>
-                                        <InputLabel id="demo-simple-select-autowidth-label">All</InputLabel>
-                                        <Select
-                                            labelId="demo-simple-select-autowidth-label"
-                                            id="demo-simple-select-autowidth"
-                                            value={age}
-                                            onChange={handleChange}
-                                            autoWidth
-                                            label="Age"
-                                        >
-                                            <MenuItem value="">
-                                                <em>None</em>
-                                            </MenuItem>
-                                            <MenuItem value={10}>Twenty</MenuItem>
-                                            <MenuItem value={21}>Twenty one</MenuItem>
-                                            <MenuItem value={22}>Twenty one and a half</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                </div> */}
+                                <div className="invoice">
+                                    <div className="f1">From</div>
+                                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                        <DatePicker
+
+                                            value={value}
+                                            onChange={(newValue) => {
+                                                setValue(newValue);
+                                            }}
+                                            renderInput={(params) => <TextField {...params} />}
+                                        />
+                                    </LocalizationProvider>
+                                    <div className="f2">To</div>
+
+                                    <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                        <DatePicker
+
+                                            value={value}
+                                            onChange={(newValue) => {
+                                                setValue(newValue);
+                                            }}
+                                            renderInput={(params) => <TextField {...params} />}
+                                        />
+                                    </LocalizationProvider>
+                                    <div className="f3">
+                                        <button className="clear_button">Clear</button>
+                                    </div>
+                                    <div className="f4">
+                                        <b>Invoice amount: </b>
+                                    </div>
+                                    <div >
+                                        <Box className="f5">
+                                            <FormControl sx={{ m: 1, minWidth: 220 }}>
+                                                <InputLabel id="demo-simple-select-label">All</InputLabel>
+                                                <Select
+                                                    labelId="demo-simple-select-label"
+                                                    id="demo-simple-select"
+                                                    value={age}
+                                                    label="Age"
+                                                    onChange={handleChange}
+                                                >
+                                                    <MenuItem value={10}>Enter value</MenuItem>
+                                                    <MenuItem value={20}>Twenty</MenuItem>
+                                                    <MenuItem value={30}>Thirty</MenuItem>
+                                                </Select>
+                                            </FormControl>
+                                        </Box>
+
+                                    </div>
+
+                                </div>
+
+
+
 
                             </div>
 

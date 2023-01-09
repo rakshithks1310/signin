@@ -77,12 +77,22 @@ function Profile(props) {
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-  
+
   const handleCloseNavMenu = () => {
     let path = '/dash';
+    console.log("checking");
+    navigate(path, {
+      replace: true
+
+    });
     setAnchorElNav(null);
-    
+
   };
+
+  
+  const handleIteams =(e)=>{
+    console.log("check");
+  }
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
@@ -170,8 +180,8 @@ function Profile(props) {
                   }}
                 >
                   {navItems.map((item) => (
-                    <MenuItem key={item} onClick={handleCloseNavMenu}>
-                      <Typography textAlign="center">{item}</Typography>
+                    <MenuItem key={item} onClick={handleIteams} >
+                      <Typography  textAlign="center">{item}</Typography>
                     </MenuItem>
                   ))}
                 </Menu>
