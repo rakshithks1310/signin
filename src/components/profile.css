@@ -12,7 +12,7 @@
     font-size: 20px;
 }
 .icon{
-    background-color: #F66E1A !important; width: 60px ; height: 160px;
+    background-color: #F66E1A !important; width: 50px !important ; height: 50px !important; text-transform: uppercase;
 }
 
 

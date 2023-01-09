@@ -47,7 +47,7 @@ const div_inside = {
   marginRight: '35px',
   borderRadius: '5px',
   border: 'none',
-  fontSize: '16px',
+  fontSize: '22px',
   fontFamily: 'arial',
 };
 const pages = [];
@@ -239,7 +239,7 @@ function Profile(props) {
 
               <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title="Setting">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }} style={{ width: "60px", height: '60px' }}>
+                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                     <Avatar alt={state.name} src="/" className="icon" />
                   </IconButton>
                 </Tooltip>

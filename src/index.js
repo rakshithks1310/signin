@@ -9,8 +9,10 @@ import {
 import Login  from './components/login';
 import Home from './components/home';
 import Profile from './components/profile';
+import Dash from './components/dash';
 
 ReactDOM.render(
+  // <Dash/>,
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home/>} />

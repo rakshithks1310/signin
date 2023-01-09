@@ -10,8 +10,12 @@
 body{
     background-image: url(/src/images/bg2.jpeg);
     background-size: cover;
-    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    background-color: rgba(0, 45, 12, .3);
+        background-blend-mode: multiply;
 }
+
+
 .hai{
     
     position: relative;
