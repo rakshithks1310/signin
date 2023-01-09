@@ -18,6 +18,7 @@ ReactDOM.render(
       <Route path="/" element={<Home/>} />
       <Route path="/login" element={<Login/>} />
       <Route path="/profile" element={<Profile />} />
+      <Route path='/dash' element={<Dash/>}/>
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

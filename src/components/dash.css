@@ -1,18 +1,79 @@
-/* .main{
+.drop{
+    background-color: white;
+}
+.main{
     display: flex;
     flex-direction: row;
-  
     justify-content: space-evenly;
-    background-color: aqua;
+    background-color: white;
     border-style: solid;
-    border-color: gray;
+    border-color: rgb(185, 182, 182);
     padding-bottom: 20px;
     padding-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
+    margin-top: 40px;
+    border-radius: 5px;
 }
 .inner{
     display: flex;
     flex-direction: column;
     align-items: center;
-} */
+    /* border-left: 5px solid gray;
+    height: 50px;
+     */
+}
+.top{
+    background-color: aquamarine;
+    
+}
+.top_div_2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.accord{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.member{
+    display: flex;
+}
+.member1{
+    margin-left: 20%;
+}
+.type{
+    background-color: aqua;
+}   
+.personal{
+    display: flex;
+}
+.personal1{
+    margin-left: 20%;
+}
+.pagina{
+    display: flex;
+    justify-content: end;
+}
+.from{
+    display: flex;
+    margin-bottom: 20px;
+}
+.invoice{
+    margin-right: 35%;
+}
+
+.clear_button{
+    background-color: rgb(87, 98, 156);
+    border-style: solid;
+    border-width: 1px;
+    padding: 2px 15px 2px 15px;
+    color: white;
+    font-weight: bold;
+    margin-right: 20px;
+}
+.hello{
+    margin-left: 50px;
+}

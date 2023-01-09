@@ -14,6 +14,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './profile.css';
+import Dash from './dash';
 
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -76,9 +77,11 @@ function Profile(props) {
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-
+  
   const handleCloseNavMenu = () => {
+    let path = '/dash';
     setAnchorElNav(null);
+    
   };
 
   const handleCloseUserMenu = () => {
