@@ -89,13 +89,13 @@ function Profile(props) {
 
   };
 
-  
-  const handleIteams =(key)=>{
+
+  const handleIteams = (key) => {
     // console.log(key);
     setTimeout(() => {
-    let path = '/dash';
-    navigate (path);
-       }, 500);
+      let path = '/dash';
+      navigate(path);
+    }, 500);
   }
 
 
@@ -131,7 +131,7 @@ function Profile(props) {
                       cursor: 'default', fontSize: '31px'
                     }}
                   >
-                    Betters
+                    Better
                   </Typography>
                 </div>
 
@@ -186,11 +186,11 @@ function Profile(props) {
                 >
                   {navItems.map((item, index) => (
                     <div key={item} onClick={handleIteams}>
-                    {/* <MenuItem key={index} > */}
+                      {/* <MenuItem key={index} > */}
                       {/* <Typography  textAlign="center">{item}</Typography> */}
-                    {/* </MenuItem>   */}
+                      {/* </MenuItem>   */}
                     </div>
-                    
+
                   ))}
                 </Menu>
               </Box>

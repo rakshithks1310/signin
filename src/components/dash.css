@@ -16,6 +16,11 @@
     margin-top: 40px;
     border-radius: 5px;
 }
+.header{
+    position: fixed;
+
+    background-color: white;
+}
 .inner{
     display: flex;
     flex-direction: column;
@@ -26,6 +31,7 @@
 }
 .top{
     background-color: aquamarine;
+    margin-top: 92px;
     
 }
 .top_div_2{
