@@ -3,7 +3,7 @@ class BackButton {
       router: () => true, // replace with PropTypes.object if you use them
     }
 
-    goBack =() =>{
+    const goBack =() =>{
         console.log("going back")
     }
   

@@ -91,7 +91,11 @@ function Profile(props) {
 
   
   const handleIteams =(e)=>{
-    console.log("check");
+    // console.log("checking");
+    setTimeout(() => {
+    let path = '/dash';
+    navigate (path);
+       }, 500);
   }
 
   const handleCloseUserMenu = () => {
@@ -179,10 +183,13 @@ function Profile(props) {
                     display: { xs: 'block', md: 'none' },
                   }}
                 >
-                  {navItems.map((item) => (
-                    <MenuItem key={item} onClick={handleIteams} >
-                      <Typography  textAlign="center">{item}</Typography>
-                    </MenuItem>
+                  {navItems.map((item, index) => (
+                    <div key={item} onClick={handleIteams}>
+                    {/* <MenuItem key={index} > */}
+                      {/* <Typography  textAlign="center">{item}</Typography> */}
+                    {/* </MenuItem>   */}
+                    </div>
+                    
                   ))}
                 </Menu>
               </Box>
@@ -237,6 +244,7 @@ function Profile(props) {
               <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                 {navItems.map((item) => (
                   <Button
+                    onClick={handleIteams}
                     style={buttt}
                     key={item}
                     sx={{
