@@ -90,13 +90,14 @@ function Profile(props) {
   };
 
   
-  const handleIteams =(e)=>{
-    // console.log("checking");
+  const handleIteams =(key)=>{
+    // console.log(key);
     setTimeout(() => {
     let path = '/dash';
     navigate (path);
        }, 500);
   }
+
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);

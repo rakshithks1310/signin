@@ -1,5 +1,6 @@
 .drop{
     background-color: white;
+    height: 100vh;
 }
 .main{
     display: flex;
