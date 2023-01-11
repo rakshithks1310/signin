@@ -77,12 +77,10 @@ const navItems = ['Enroll', 'Members'];
 const settings = ['Logout'];
 const header = { backgroundColor: 'white' };
 const buttt = {
-    margin: '0  80px 0 15px',
+    margin: '0  50px 0 5px',
     backgroundColor: '#eda847',
 };
-const buttt2 = { 
-    backgroundColor: 'pink'
-};
+
 
 export default function Dash() {
 

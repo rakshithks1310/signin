@@ -118,4 +118,7 @@
 .buttt2{
     background-color: aqua;
 }
-
+.icon{
+    width: 50px !important ; height: 50px !important;
+    margin-left: 90px;
+}
