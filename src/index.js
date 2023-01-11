@@ -10,6 +10,7 @@ import Login  from './components/login';
 import Home from './components/home';
 import Profile from './components/profile';
 import Dash from './components/dash';
+import Dash2 from './components/dash2';
 
 ReactDOM.render(
   // <Dash/>,
@@ -19,6 +20,7 @@ ReactDOM.render(
       <Route path="/login" element={<Login/>} />
       <Route path="/profile" element={<Profile />} />
       <Route path='/dash' element={<Dash/>}/>
+      <Route path='/dash2' element={<Dash2/>}/>
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

@@ -1,5 +1,5 @@
 import React from "react";
-import './dash.css';
+import './dash2.css';
 import PersonIcon from "@mui/icons-material/Person";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
@@ -77,12 +77,10 @@ const navItems = ['Enroll', 'Members'];
 const settings = ['Logout'];
 const header = { backgroundColor: 'white' };
 const buttt = {
-    margin: '0  80px 0 15px',
+    margin: '0  50px 0 5px',
     backgroundColor: '#eda847',
 };
-const buttt2 = { 
-    backgroundColor: 'pink'
-};
+
 
 export default function Dash() {
 
@@ -166,7 +164,7 @@ export default function Dash() {
     };
 
     const handleCloseNavMenu = () => {
-        // let path = '/dash';
+        let path = '/dash2';
         console.log("checking");
         navigate(path, {
             replace: true
@@ -178,9 +176,9 @@ export default function Dash() {
 
     const [val, setVal] = useState(false);
     const handleIteams = (key) => {
-        console.log(key);
+        // console.log(key);
         setTimeout(() => {
-            let path = '/dash';
+            let path = '/dash2';
             navigate(path);
         }, 500);
         setVal(!val);
@@ -322,11 +320,8 @@ export default function Dash() {
               </div> */}
                             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                                 {pages.map((page) => (
-                                   
-                                    
                                     <Button
                                         key={page}
-                                    
                                         onClick={handleCloseNavMenu}
                                         sx={{ my: 3, color: '#e37e44', display: 'block' }}
                                     ></Button>
@@ -334,12 +329,11 @@ export default function Dash() {
                             </Box>
                             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                                 {navItems.map((item) => (
-                                    // console.log("----", item) ||
+                                    
                                     <Button
                                         onClick={handleIteams}
-                                        style = {item === "Enroll" ? buttt : null}
-                                        // style = {item === "Members" ? buttt : null}
-                                        // className={buttt  + (val ? buttt2 : '' )}
+                                        style = {item === "Members" ? buttt : null}
+                                       
                                         key={item}
                                         sx={{
                                             color: '#e37e44',
