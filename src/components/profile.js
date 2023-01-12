@@ -124,28 +124,25 @@ function Profile(props) {
         <AppBar position="fixed" style={header}>
           <Container maxWidth="xl">
             <Toolbar disableGutters>
-              <div>
-                <div>
-                  <Typography
-                    variant="h5"
-                    noWrap
-                    component="a"
-                    sx={{
-                      mr: 2, pt: 2,
-                      display: { xs: 'none', md: 'flex' },
-                      fontFamily: 'rebel',
-                      fontWeight: 700,
-                      letterSpacing: '.1rem',
-                      color: '#e66e32',
-                      cursor: 'default', fontSize: '31px'
-                    }}
-                  >
-                    Better
-                  </Typography>
-                </div>
-
-                <div>
-                  <Typography
+            <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            
+            
+            sx={{
+                  mr: 2, pt: 2,
+                  display: { xs: 'none', md: 'flex' },
+                  flexGrow: 25,
+                  fontFamily: 'rebel',
+                  fontWeight: 700,
+                  letterSpacing: '.1rem',
+                  color: '#e66e32',
+                  cursor: 'default', fontSize: '31px'
+            }}
+          ><div>
+            <div>Better</div>
+            <Typography
                     variant="h5"
                     noWrap
                     component="a"
@@ -155,15 +152,18 @@ function Profile(props) {
                       fontWeight: '100px',
                       letterSpacing: '.2rem',
                       color: '#e66e32',
-                      margin: '-15px 0 0px 0 ', fontSize: '37px',
-                      cursor: 'default', fontFamily: 'Poppins-ExtraBold !important',
+                      margin: '-15px 0 0px 0 ',
+                      fontSize: '37px',
+                      cursor: 'default', 
+                      fontFamily: 'Poppins-ExtraBold !important',
                     }}
                   >
                     LOYALTY
                   </Typography>
-                </div>
-              </div>
+            </div>
+          </Typography>
 
+          
               <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                 <IconButton
                   size="large"
@@ -195,53 +195,55 @@ function Profile(props) {
                 >
                   {navItems.map((item, index) => (
                     <div key={item} onClick={handleIteams}>
-                      {/* <MenuItem key={index} > */}
-                      {/* <Typography  textAlign="center">{item}</Typography> */}
-                      {/* </MenuItem>   */}
+                      {/* <MenuItem key={index} >
+                      <Typography  textAlign="center">{item}</Typography>
+                      </MenuItem>   */}
                     </div>
 
                   ))}
                 </Menu>
               </Box>
 
-              <div className="loyal">
-                <Typography
-                  variant="h6"
-                  //noWrap
-                  component="a"
-                  sx={{
-                    mr: 2,
-                    display: { xs: 'flex', md: 'none' },
-                    flexGrow: 1,
-                    fontFamily: 'rebel',
-                    fontWeight: 700,
-                    fontSize: '85px',
-                    letterSpacing: '.1rem',
-                    color: '#e66e32',
-                    textDecoration: 'none',
-                  }}
-                >
-                  Better
-                </Typography>
-
-                <Typography
-                  variant="h5"
-                  noWrap
-                  component="a"
-                  sx={{
-                    mr: 2,
-                    display: { xs: 'flex', md: 'none' },
-                    flexGrow: 1,
-                    fontWeight: 1000,
-                    letterSpacing: '.1rem',
-                    color: '#e66e32',
-                    margin: '-6px 0', fontSize: '100px',
-                    textDecoration: 'none', fontFamily: 'Poppins-Black !important',
-                  }}
-                >
-                  LOYALTY
-                </Typography>
-              </div>
+              <Typography
+            variant="h5"
+            noWrap
+            component="a"
+            href=""
+            sx={{
+                  mr: 2,
+                  display:  { xs: 'flex', md: 'none' },
+                  flexGrow: 1,
+                  fontFamily: 'rebel',
+                  fontWeight: 700,
+                  letterSpacing: '.1rem',
+                  color: '#e66e32',
+                  textDecoration: 'none',
+                  cursor: 'default', 
+                  fontSize: '31px'
+                     
+            }}
+            ><div>
+            <div>Better</div>
+            <Typography
+                    variant="h5"
+                    noWrap
+                    component="a"
+                    sx={{
+                      mr: 2,
+                      display:  { xs: 'flex', md: 'none' },
+                      fontWeight: '100px',
+                      letterSpacing: '.2rem',
+                      color: '#e66e32',
+                      margin: '-15px 0 0px 0 ',
+                      fontSize: '37px',
+                      cursor: 'default', 
+                      fontFamily: 'Poppins-ExtraBold !important',
+                    }}
+                  >
+                    LOYALTY
+                  </Typography>
+            </div>
+          </Typography>
               <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                 {pages.map((page) => (
                   <Button

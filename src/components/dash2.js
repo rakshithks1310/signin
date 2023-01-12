@@ -149,7 +149,7 @@ export default function Dash() {
         navigate(-1);
     }
 
-    
+
     const { state } = useLocation();
     console.log(state);
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -203,27 +203,24 @@ export default function Dash() {
                 <AppBar className="header" style={header}>
                     <Container maxWidth="xl">
                         <Toolbar disableGutters>
-                            <div>
-                                <div>
-                                    <Typography
-                                        variant="h5"
-                                        noWrap
-                                        component="a"
-                                        sx={{
-                                            mr: 2, pt: 2,
-                                            display: { xs: 'none', md: 'flex' },
-                                            fontFamily: 'rebel',
-                                            fontWeight: 700,
-                                            letterSpacing: '.1rem',
-                                            color: '#e66e32',
-                                            cursor: 'default', fontSize: '31px'
-                                        }}
-                                    >
-                                        Better
-                                    </Typography>
-                                </div>
+                            <Typography
+                                variant="h6"
+                                noWrap
+                                component="a"
 
-                                <div>
+
+                                sx={{
+                                    mr: 2, pt: 2,
+                                    display: { xs: 'none', md: 'flex' },
+                                    flexGrow: 25,
+                                    fontFamily: 'rebel',
+                                    fontWeight: 700,
+                                    letterSpacing: '.1rem',
+                                    color: '#e66e32',
+                                    cursor: 'default', fontSize: '31px'
+                                }}
+                            ><div>
+                                    <div>Better</div>
                                     <Typography
                                         variant="h5"
                                         noWrap
@@ -234,14 +231,17 @@ export default function Dash() {
                                             fontWeight: '100px',
                                             letterSpacing: '.2rem',
                                             color: '#e66e32',
-                                            margin: '-15px 0 0px 0 ', fontSize: '37px',
-                                            cursor: 'default', fontFamily: 'Poppins-ExtraBold !important',
+                                            margin: '-15px 0 0px 0 ',
+                                            fontSize: '37px',
+                                            cursor: 'default',
+                                            fontFamily: 'Poppins-ExtraBold !important',
                                         }}
                                     >
                                         LOYALTY
                                     </Typography>
                                 </div>
-                            </div>
+                            </Typography>
+
                             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                                 <IconButton
                                     size="large"
@@ -280,44 +280,47 @@ export default function Dash() {
                                 </Menu>
                             </Box>
 
-                            {/* <div className="loyal">
-                <Typography
-                  variant="h6"
-                  //noWrap
-                  component="a"
-                  sx={{
-                    mr: 2,
-                    display: { xs: 'flex', md: 'none' },
-                    flexGrow: 1,
-                    fontFamily: 'rebel',
-                    fontWeight: 700,
-                    fontSize: '85px',
-                    letterSpacing: '.1rem',
-                    color: '#e66e32',
-                    textDecoration: 'none',
-                  }}
-                >
-                  Better
-                </Typography>
 
-                <Typography
-                  variant="h5"
-                  noWrap
-                  component="a"
-                  sx={{
-                    mr: 2,
-                    display: { xs: 'flex', md: 'none' },
-                    flexGrow: 1,
-                    fontWeight: 1000,
-                    letterSpacing: '.1rem',
-                    color: '#e66e32',
-                    margin: '-6px 0', fontSize: '100px',
-                    textDecoration: 'none', fontFamily: 'Poppins-Black !important',
-                  }}
-                >
-                  LOYALTY
-                </Typography>
-              </div> */}
+                            <Typography
+                                variant="h5"
+                                noWrap
+                                component="a"
+                                href=""
+                                sx={{
+                                    mr: 2,
+                                    display: { xs: 'flex', md: 'none' },
+                                    flexGrow: 1,
+                                    fontFamily: 'rebel',
+                                    fontWeight: 700,
+                                    letterSpacing: '.1rem',
+                                    color: '#e66e32',
+                                    textDecoration: 'none',
+                                    cursor: 'default',
+                                    fontSize: '31px'
+
+                                }}
+                            ><div>
+                                    <div>Better</div>
+                                    <Typography
+                                        variant="h5"
+                                        noWrap
+                                        component="a"
+                                        sx={{
+                                            mr: 2,
+                                            display: { xs: 'flex', md: 'none' },
+                                            fontWeight: '100px',
+                                            letterSpacing: '.2rem',
+                                            color: '#e66e32',
+                                            margin: '-15px 0 0px 0 ',
+                                            fontSize: '37px',
+                                            cursor: 'default',
+                                            fontFamily: 'Poppins-ExtraBold !important',
+                                        }}
+                                    >
+                                        LOYALTY
+                                    </Typography>
+                                </div>
+                            </Typography>
                             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                                 {pages.map((page) => (
                                     <Button
@@ -329,11 +332,11 @@ export default function Dash() {
                             </Box>
                             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                                 {navItems.map((item) => (
-                                    
+
                                     <Button
                                         onClick={handleIteams}
-                                        style = {item === "Members" ? buttt : null}
-                                       
+                                        style={item === "Members" ? buttt : null}
+
                                         key={item}
                                         sx={{
                                             color: '#e37e44',
@@ -350,7 +353,7 @@ export default function Dash() {
                             <Box sx={{ flexGrow: 0 }}>
                                 <Tooltip title="Setting">
                                     <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                        <Avatar  src="/" className="icon" />
+                                        <Avatar src="/" className="icon" />
                                     </IconButton>
                                 </Tooltip>
                                 <Menu
