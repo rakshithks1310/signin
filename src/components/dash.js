@@ -77,9 +77,10 @@ const navItems = ['Enroll', 'Members'];
 const settings = ['Logout'];
 const header = { backgroundColor: 'white' };
 const buttt = {
-    margin: '0  50px 0 5px',
+    margin: '0  85px 0 55px',
     backgroundColor: '#eda847',
 };
+
 
 
 export default function Dash() {
@@ -178,7 +179,7 @@ export default function Dash() {
     const handleIteams = (key) => {
         console.log(key);
         setTimeout(() => {
-            let path = '/dash';
+            let path = '/dash ';
             navigate(path);
         }, 500);
         setVal(!val);

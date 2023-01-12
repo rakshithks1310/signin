@@ -90,12 +90,19 @@ function Profile(props) {
   };
 
 
+  const handleIteams = item => e => {
+    console.log("item", item);
+    let path = "";
+    if (item === "Enroll") {
+      path = '/dash'
+    } else {
 
+      path = '/dash2'
 
-  const handleIteams = (key) => {
-    // console.log(key);
+    }
+
     setTimeout(() => {
-      let path = '/dash';
+      // let path = '/dash';
       navigate(path);
     }, 500);
   }
@@ -247,7 +254,7 @@ function Profile(props) {
               <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                 {navItems.map((item) => (
                   <Button
-                    onClick={handleIteams}
+                    onClick={(e) => handleIteams(item)(e)}
                     style={buttt}
                     key={item}
                     sx={{
@@ -264,7 +271,7 @@ function Profile(props) {
               <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title="Setting">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar alt={state.name} src="/" className="icon" />
+                    <Avatar  src="/" className="icon" />
                   </IconButton>
                 </Tooltip>
                 <Menu

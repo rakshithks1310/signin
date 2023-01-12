@@ -77,7 +77,7 @@ const navItems = ['Enroll', 'Members'];
 const settings = ['Logout'];
 const header = { backgroundColor: 'white' };
 const buttt = {
-    margin: '0  50px 0 5px',
+    margin: '0  50px 0 55px',
     backgroundColor: '#eda847',
 };
 
@@ -149,7 +149,7 @@ export default function Dash() {
         navigate(-1);
     }
 
-
+    
     const { state } = useLocation();
     console.log(state);
     const [anchorElNav, setAnchorElNav] = React.useState(null);
