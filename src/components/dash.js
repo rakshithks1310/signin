@@ -37,6 +37,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import React, { useState } from "react";
 import { useLocation, useNavigate } from 'react-router-dom';
 import './dash.css';
+import Header from './header';
 
 
 
@@ -199,7 +200,7 @@ export default function Dash() {
 
     return (
         <div className="drop">
-            <div >
+            {/* <div >
                 <AppBar className="header" style={header}>
                     <Container maxWidth="xl">
                         <Toolbar disableGutters>
@@ -391,11 +392,14 @@ export default function Dash() {
                         </Toolbar>
                     </Container>
                 </AppBar>
+            </div> */}
+            <div>
+                <Header/>
             </div>
 
 
             <div className="top">
-                <div style={{ padding: '14px 20px 0', cursor:'pointer' }} onClick={goBack}>Go Back</div>
+                <div style={{ padding: '14px 20px 0', cursor: 'pointer' }} onClick={goBack}>Go Back</div>
                 {/* <div className="top_div_2">::: Customer Dashboard:::</div> */}
             </div>
             <div className="main">
@@ -430,8 +434,10 @@ export default function Dash() {
                     expanded={expanded === "panel1"}
                     onChange={handleChange("panel1")}
                 >
-                    <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                        <Typography>Personal Details</Typography>
+                    <AccordionSummary
+                        aria-controls="panel1d-content"
+                        id="panel1d-header">
+                        <Typography sx={{ width: '33%', flexShrink: 0 }}>Personal Details</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>
@@ -464,7 +470,7 @@ export default function Dash() {
                                     <p>: 9999999999</p>
                                     <p>: Bsk 3rd stage bangalore </p>
                                     <p>: 560085</p>
-                                </div>
+                                </div>  
                             </div>
                         </Typography>
                     </AccordionDetails>
@@ -474,7 +480,7 @@ export default function Dash() {
                     onChange={handleChange("panel2")}
                 >
                     <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                        <Typography>Membership Details</Typography>
+                        <Typography sx={{ width: '33%', flexShrink: 0 }}>Membership Details</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>
@@ -517,7 +523,7 @@ export default function Dash() {
                     onChange={handleChange("panel3")}
                 >
                     <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-                        <Typography>Trasaction History</Typography>
+                        <Typography sx={{ width: '33%', flexShrink: 0 }}>Trasaction History</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>

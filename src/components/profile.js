@@ -1,19 +1,8 @@
-import MenuIcon from '@mui/icons-material/Menu';
-import AppBar from '@mui/material/AppBar';
-import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
-import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
-import * as React from 'react';
-import { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation} from 'react-router-dom';
 import './profile.css';
+import Header from './header'
 
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -29,7 +18,6 @@ const data = [
 const chart = {
   display: 'flex',
   flexDirection: 'row',
-  marginTop: '10%',
   justifyContent: 'space-around',
 };
 const div_first = {
@@ -50,13 +38,7 @@ const div_inside = {
   fontSize: '22px',
   fontFamily: 'arial',
 };
-const pages = [];
-const navItems = ['Enroll', 'Members'];
-const settings = ['Logout'];
-const header = { backgroundColor: 'white' };
-const buttt = {
-  margin: '0  50px 0 5px',
-};
+
 const barchart = {
   display: 'flex',
   alignItem: 'center',
@@ -66,247 +48,16 @@ const barchart = {
 function Profile(props) {
   const { state } = useLocation();
   console.log(state);
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const [logout, setLogout] = useState('');
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    let path = '/dash';
-    console.log("checking");
-    navigate(path, {
-      replace: true
-
-    });
-    setAnchorElNav(null);
-
-  };
 
 
-  const handleIteams = item => e => {
-    console.log("item", item);
-    let path = "";
-    if (item === "Enroll") {
-      path = '/dash'
-    } else {
 
-      path = '/dash2'
-
-    }
-
-    setTimeout(() => {
-      // let path = '/dash';
-      navigate(path);
-    }, 500);
-  }
-
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
-  let navigate = useNavigate();
-  const logoff = () => {
-    let path = '/';
-    setTimeout(navigate(path));
-  };
 
   return (
     <div className="charge">
-      <div>
-        <AppBar position="fixed" style={header}>
-          <Container maxWidth="xl">
-            <Toolbar disableGutters>
-              <Typography
-                variant="h6"
-                noWrap
-                component="a"
-
-
-                sx={{
-                  mr: 2, pt: 2,
-                  display: { xs: 'none', md: 'flex' },
-                  flexGrow: 25,
-                  fontFamily: 'rebel',
-                  fontWeight: 700,
-                  letterSpacing: '.1rem',
-                  color: '#e66e32',
-                  cursor: 'default', fontSize: '31px'
-                }}
-              ><div>
-                  <div>Better</div>
-                  <Typography
-                    variant="h5"
-                    noWrap
-                    component="a"
-                    sx={{
-                      mr: 2,
-                      display: { xs: 'none', md: 'flex' },
-                      fontWeight: '100px',
-                      letterSpacing: '.2rem',
-                      color: '#e66e32',
-                      margin: '-15px 0 0px 0 ',
-                      fontSize: '37px',
-                      cursor: 'default',
-                      fontFamily: 'Poppins-ExtraBold !important',
-                    }}
-                  >
-                    LOYALTY
-                  </Typography>
-                </div>
-              </Typography>
-
-
-              <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                <IconButton
-                  size="large"
-                  aria-label="account of current user"
-                  aria-controls="menu-appbar"
-                  aria-haspopup="true"
-                  onClick={handleOpenNavMenu}
-                  color="black"
-                >
-                  <MenuIcon />
-                </IconButton>
-                <Menu
-                  id="menu-appbar"
-                  anchorEl={anchorElNav}
-                  anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'left',
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'left',
-                  }}
-                  open={Boolean(anchorElNav)}
-                  onClose={handleCloseNavMenu}
-                  sx={{
-                    display: { xs: 'block', md: 'none' },
-                  }}
-                >
-                  {navItems.map((item, index) => (
-                    <div key={item} onClick={handleIteams}>
-                      {/* <MenuItem key={index} >
-                      <Typography  textAlign="center">{item}</Typography>
-                      </MenuItem>   */}
-                    </div>
-
-                  ))}
-                </Menu>
-              </Box>
-
-              <Typography
-                variant="h5"
-                noWrap
-                component="a"
-                href=""
-                sx={{
-                  mr: 2,
-                  display: { xs: 'flex', md: 'none' },
-                  flexGrow: 1,
-                  fontFamily: 'rebel',
-                  fontWeight: 700,
-                  letterSpacing: '.1rem',
-                  color: '#e66e32',
-                  textDecoration: 'none',
-                  cursor: 'default',
-                  fontSize: '31px'
-
-                }}
-              ><div>
-                  <div>Better</div>
-                  <Typography
-                    variant="h5"
-                    noWrap
-                    component="a"
-                    sx={{
-                      mr: 2,
-                      display: { xs: 'flex', md: 'none' },
-                      fontWeight: '100px',
-                      letterSpacing: '.2rem',
-                      color: '#e66e32',
-                      margin: '-15px 0 0px 0 ',
-                      fontSize: '37px',
-                      cursor: 'default',
-                      fontFamily: 'Poppins-ExtraBold !important',
-                    }}
-                  >
-                    LOYALTY
-                  </Typography>
-                </div>
-              </Typography>
-              <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                {pages.map((page) => (
-                  <Button
-                    key={page}
-                    onClick={handleCloseNavMenu}
-                    sx={{ my: 3, color: '#e37e44', display: 'block' }}
-                  ></Button>
-                ))}
-              </Box>
-              <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                {navItems.map((item) => (
-                  <Button
-                    onClick={(e) => handleIteams(item)(e)}
-                    style={buttt}
-                    key={item}
-                    sx={{
-                      color: '#e37e44',
-                      textTransform: 'none',
-                      fontSize: '25px', fontFamily: 'Poppins-Regular'
-                    }}
-                  >
-                    {item}
-                  </Button>
-                ))}
-              </Box>
-
-              <Box sx={{ flexGrow: 0 }}>
-                <Tooltip title="Setting">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar src="/" className="icon" />
-                  </IconButton>
-                </Tooltip>
-                <Menu
-                  sx={{ mt: '45px' }}
-                  id="menu-appbar"
-                  anchorEl={anchorElUser}
-                  anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                  }}
-                  open={Boolean(anchorElUser)}
-                  onClose={handleCloseUserMenu}
-                >
-                  {settings.map((setting) => (
-                    <MenuItem
-                      key={setting}
-                      onClick={logoff}
-                      value={logout}
-                      onChange={(e) => setLogout(e.target.value)}
-                    >
-                      <Typography textAlign="center">{setting}</Typography>
-                    </MenuItem>
-                  ))}
-                </Menu>
-              </Box>
-            </Toolbar>
-          </Container>
-        </AppBar>
+      <div >
+        <Header/>
       </div>
+      
 
       <div style={chart}>
         <div className="split" style={{ marginTop: '70px' }}>

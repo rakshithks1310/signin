@@ -1,0 +1,23 @@
+.hai{
+    background-color: #F66E1A !important;
+}
+.active{
+    background-color: #e66e32;
+    color: white;
+    
+}
+
+@font-face {
+    font-family: rebel;
+    src: url(../fonts/Rebel.ttf);
+  }
+
+
+  @font-face {
+      font-family: Poppins-ExtraBold;
+      src: url(../fonts/Poppins/Poppins-ExtraBold.ttf);
+  }
+   @font-face {
+       font-family: Poppins-Regular;
+       src: url(../fonts/Poppins/Poppins-Regular.ttf);
+   }

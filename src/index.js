@@ -11,9 +11,10 @@ import Home from './components/home';
 import Profile from './components/profile';
 import Dash from './components/dash';
 import Dash2 from './components/dash2';
+import Header from './components/header';
 
 ReactDOM.render(
-  // <Dash/>,
+  // <Header/>,
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home/>} />
@@ -21,6 +22,7 @@ ReactDOM.render(
       <Route path="/profile" element={<Profile />} />
       <Route path='/dash' element={<Dash/>}/>
       <Route path='/dash2' element={<Dash2/>}/>
+      <Route path='/header' element={<Header/>}/>
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

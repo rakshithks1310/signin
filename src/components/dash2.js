@@ -37,6 +37,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import React, { useState } from "react";
 import { useLocation, useNavigate } from 'react-router-dom';
 import './dash2.css';
+import Header from './header';
 
 
 
@@ -198,7 +199,7 @@ export default function Dash() {
 
     return (
         <div className="drop">
-            <div >
+            {/* <div >
                 <AppBar className="header" style={header}>
                     <Container maxWidth="xl">
                         <Toolbar disableGutters>
@@ -386,6 +387,9 @@ export default function Dash() {
                         </Toolbar>
                     </Container>
                 </AppBar>
+            </div> */}
+            <div>
+                <Header/>
             </div>
 
 
