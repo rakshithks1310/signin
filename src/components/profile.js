@@ -14,7 +14,6 @@ import * as React from 'react';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import './profile.css';
-import Dash from './dash';
 
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -124,13 +123,13 @@ function Profile(props) {
         <AppBar position="fixed" style={header}>
           <Container maxWidth="xl">
             <Toolbar disableGutters>
-            <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            
-            
-            sx={{
+              <Typography
+                variant="h6"
+                noWrap
+                component="a"
+
+
+                sx={{
                   mr: 2, pt: 2,
                   display: { xs: 'none', md: 'flex' },
                   flexGrow: 25,
@@ -139,10 +138,10 @@ function Profile(props) {
                   letterSpacing: '.1rem',
                   color: '#e66e32',
                   cursor: 'default', fontSize: '31px'
-            }}
-          ><div>
-            <div>Better</div>
-            <Typography
+                }}
+              ><div>
+                  <div>Better</div>
+                  <Typography
                     variant="h5"
                     noWrap
                     component="a"
@@ -154,16 +153,16 @@ function Profile(props) {
                       color: '#e66e32',
                       margin: '-15px 0 0px 0 ',
                       fontSize: '37px',
-                      cursor: 'default', 
+                      cursor: 'default',
                       fontFamily: 'Poppins-ExtraBold !important',
                     }}
                   >
                     LOYALTY
                   </Typography>
-            </div>
-          </Typography>
+                </div>
+              </Typography>
 
-          
+
               <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                 <IconButton
                   size="large"
@@ -205,45 +204,45 @@ function Profile(props) {
               </Box>
 
               <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
+                variant="h5"
+                noWrap
+                component="a"
+                href=""
+                sx={{
                   mr: 2,
-                  display:  { xs: 'flex', md: 'none' },
+                  display: { xs: 'flex', md: 'none' },
                   flexGrow: 1,
                   fontFamily: 'rebel',
                   fontWeight: 700,
                   letterSpacing: '.1rem',
                   color: '#e66e32',
                   textDecoration: 'none',
-                  cursor: 'default', 
+                  cursor: 'default',
                   fontSize: '31px'
-                     
-            }}
-            ><div>
-            <div>Better</div>
-            <Typography
+
+                }}
+              ><div>
+                  <div>Better</div>
+                  <Typography
                     variant="h5"
                     noWrap
                     component="a"
                     sx={{
                       mr: 2,
-                      display:  { xs: 'flex', md: 'none' },
+                      display: { xs: 'flex', md: 'none' },
                       fontWeight: '100px',
                       letterSpacing: '.2rem',
                       color: '#e66e32',
                       margin: '-15px 0 0px 0 ',
                       fontSize: '37px',
-                      cursor: 'default', 
+                      cursor: 'default',
                       fontFamily: 'Poppins-ExtraBold !important',
                     }}
                   >
                     LOYALTY
                   </Typography>
-            </div>
-          </Typography>
+                </div>
+              </Typography>
               <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                 {pages.map((page) => (
                   <Button
@@ -273,7 +272,7 @@ function Profile(props) {
               <Box sx={{ flexGrow: 0 }}>
                 <Tooltip title="Setting">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar  src="/" className="icon" />
+                    <Avatar src="/" className="icon" />
                   </IconButton>
                 </Tooltip>
                 <Menu

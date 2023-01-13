@@ -29,10 +29,11 @@
      */
 }
 .top{
-    background-color: aquamarine;
-    margin-top: 100px;
+    background: linear-gradient(15deg, #373975 20%, #c4497b 80%);
+    margin-top: 100px; color: #fff;height: 50px;
     
 }
+.accord .MuiSvgIcon-fontSizeMedium {color:#fff}
 .top_div_2{
     display: flex;
     align-items: center;
@@ -54,9 +55,9 @@
     margin-left: 15px;
     padding-right: 15px;
 }
-.type{
+/* .type{
     background-color: aqua;
-}   
+}    */
 .personal{
     display: flex;
 }

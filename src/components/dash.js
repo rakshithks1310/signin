@@ -1,43 +1,42 @@
-import React from "react";
-import './dash.css';
-import PersonIcon from "@mui/icons-material/Person";
+import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
+import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
-import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-import { styled } from "@mui/material/styles";
-import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
+import MenuIcon from '@mui/icons-material/Menu';
+import PersonIcon from "@mui/icons-material/Person";
 import MuiAccordion from "@mui/material/Accordion";
-import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
-import usePagination from '@mui/material/usePagination';
+import MuiAccordionSummary from "@mui/material/AccordionSummary";
+import AppBar from '@mui/material/AppBar';
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import FormControl from '@mui/material/FormControl';
+import IconButton from '@mui/material/IconButton';
+import InputLabel from '@mui/material/InputLabel';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Paper from '@mui/material/Paper';
+import Select from '@mui/material/Select';
+import { styled } from "@mui/material/styles";
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import { useLocation, useNavigate } from 'react-router-dom';
-import AppBar from '@mui/material/AppBar';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-import { useState } from 'react';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import Menu from '@mui/material/Menu';
 import Tooltip from '@mui/material/Tooltip';
-import Avatar from '@mui/material/Avatar';
+import Typography from "@mui/material/Typography";
+import usePagination from '@mui/material/usePagination';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import React, { useState } from "react";
+import { useLocation, useNavigate } from 'react-router-dom';
+import './dash.css';
 
 
 
@@ -45,7 +44,7 @@ import Avatar from '@mui/material/Avatar';
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
         backgroundColor: '#a8bce0',
-        color: theme.palette.common.white,
+        color: theme.palette.common.white, borderRadius: '0'
     },
     [`&.${tableCellClasses.body}`]: {
         fontSize: 14,
@@ -78,7 +77,7 @@ const settings = ['Logout'];
 const header = { backgroundColor: 'white' };
 const buttt = {
     margin: '0  85px 0 55px',
-    backgroundColor: '#eda847',
+    backgroundColor: '#e66e32', color: '#fff'
 };
 
 
@@ -111,16 +110,16 @@ export default function Dash() {
             {...props}
         />
     ))(({ theme }) => ({
-        backgroundColor:
+        background:
             theme.palette.mode === "dark"
-                ? "black"
-                : "#9bd6e8",
+                ? "white"
+                : "linear-gradient(15deg, #373975 20%, #c4497b 80%)",
         flexDirection: "row-reverse",
         "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
             transform: "rotate(90deg)"
         },
         "& .MuiAccordionSummary-content": {
-            marginLeft: theme.spacing(1)
+            marginLeft: theme.spacing(1), color: 'white'
         }
     }));
 
@@ -165,7 +164,7 @@ export default function Dash() {
     };
 
     const handleCloseNavMenu = () => {
-        // let path = '/dash';
+        let path = '/dash';
         console.log("checking");
         navigate(path, {
             replace: true
@@ -396,31 +395,31 @@ export default function Dash() {
 
 
             <div className="top">
-                <div onClick={goBack}>Go Back</div>
-                <div className="top_div_2">::: Customer Dashboard:::</div>
+                <div style={{ padding: '14px 20px 0', cursor:'pointer' }} onClick={goBack}>Go Back</div>
+                {/* <div className="top_div_2">::: Customer Dashboard:::</div> */}
             </div>
             <div className="main">
                 <div className="inner">
                     <div>Customer Name</div>
-                    <PersonIcon />
+                    <PersonIcon style={{ fontSize: '70px' }} />
                     <div><b>Mahesh J</b></div>
                 </div>
 
                 <div className="inner">
                     <div>Membership Validity</div>
-                    <AccountBalanceWalletIcon />
+                    <AccountBalanceWalletIcon style={{ fontSize: '70px' }} />
                     <div><b>16-08-2020</b></div>
                 </div>
 
                 <div className="inner">
                     <div>Available Purchase Limit</div>
-                    <CurrencyRupeeIcon />
+                    <CurrencyRupeeIcon style={{ fontSize: '70px' }} />
                     <div><b>50000.00</b></div>
                 </div>
 
                 <div className="inner">
                     <div>Status</div>
-                    <CheckCircleOutlineIcon />
+                    <CheckCircleOutlineIcon style={{ fontSize: '70px' }} />
                     <div><b>ACTIVE</b></div>
                 </div>
 
@@ -450,7 +449,7 @@ export default function Dash() {
                                 <div className="member_div">
                                     <p>: Mahesh J</p>
                                     <p>: maheshj@gamil.com</p>
-                                    <p>: </p>
+                                    <p>: 9999999999</p>
                                     <p>: Bangalore</p>
                                     <p>: Karnataka</p>
                                 </div>
@@ -458,7 +457,7 @@ export default function Dash() {
                                     <p><b>DOB</b>  </p>
                                     <p><b>Mobile</b> </p>
                                     <p><b>Address</b> </p>
-                                    <p><b>Pincoded</b> </p>
+                                    <p><b>Pincode</b> </p>
                                 </div>
                                 <div className="member_div">
                                     <p>: 05-06-1867</p>
