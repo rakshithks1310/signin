@@ -7,6 +7,7 @@ import Header from './header'
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Bar, BarChart, CartesianGrid, Legend, XAxis, YAxis } from 'recharts';
+import { style } from '@mui/system';
 
 const data = [
   { name: 'User 1', users: 2000000 },
@@ -54,7 +55,7 @@ function Profile(props) {
 
   return (
     <div className="charge">
-      <div >
+      <div>
         <Header/>
       </div>
       

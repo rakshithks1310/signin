@@ -7,15 +7,9 @@ import PersonIcon from "@mui/icons-material/Person";
 import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
-import AppBar from '@mui/material/AppBar';
-import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
 import FormControl from '@mui/material/FormControl';
-import IconButton from '@mui/material/IconButton';
 import InputLabel from '@mui/material/InputLabel';
-import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Paper from '@mui/material/Paper';
 import Select from '@mui/material/Select';
@@ -27,8 +21,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import TextField from '@mui/material/TextField';
-import Toolbar from '@mui/material/Toolbar';
-import Tooltip from '@mui/material/Tooltip';
 import Typography from "@mui/material/Typography";
 import usePagination from '@mui/material/usePagination';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -72,14 +64,7 @@ const rows = [
 ];
 
 
-const pages = [];
-const navItems = ['Enroll', 'Members'];
-const settings = ['Logout'];
-const header = { backgroundColor: 'white' };
-const buttt = {
-    margin: '0  50px 0 55px',
-    backgroundColor: '#e66e32', color: '#fff'
-};
+
 
 
 export default function Dash() {
@@ -110,7 +95,7 @@ export default function Dash() {
             {...props}
         />
     ))(({ theme }) => ({
-        backgroundColor:
+        background:
             theme.palette.mode === "dark"
                 ? "white"
                 : "linear-gradient(15deg, #373975 20%, #c4497b 80%)",
@@ -119,7 +104,7 @@ export default function Dash() {
             transform: "rotate(90deg)"
         },
         "& .MuiAccordionSummary-content": {
-            marginLeft: theme.spacing(1)
+            marginLeft: theme.spacing(1), color: 'white'
         }
     }));
 
@@ -152,273 +137,48 @@ export default function Dash() {
 
     const { state } = useLocation();
     console.log(state);
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
-    const [logout, setLogout] = useState('');
 
-    const handleOpenNavMenu = (event) => {
-        setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
-    };
 
-    const handleCloseNavMenu = () => {
-        let path = '/dash2';
-        console.log("checking");
-        navigate(path, {
-            replace: true
-
-        });
-        setAnchorElNav(null);
-
-    };
 
     const [val, setVal] = useState(false);
-    const handleIteams = (key) => {
-        // console.log(key);
-        setTimeout(() => {
-            let path = '/dash2';
-            navigate(path);
-        }, 500);
-        setVal(!val);
-    }
 
-
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
-
-
-    const logoff = () => {
-        let path = '/';
-        setTimeout(navigate(path));
-    };
 
 
 
     return (
         <div className="drop">
-            {/* <div >
-                <AppBar className="header" style={header}>
-                    <Container maxWidth="xl">
-                        <Toolbar disableGutters>
-                            <Typography
-                                variant="h6"
-                                noWrap
-                                component="a"
 
-
-                                sx={{
-                                    mr: 2, pt: 2,
-                                    display: { xs: 'none', md: 'flex' },
-                                    flexGrow: 25,
-                                    fontFamily: 'rebel',
-                                    fontWeight: 700,
-                                    letterSpacing: '.1rem',
-                                    color: '#e66e32',
-                                    cursor: 'default', fontSize: '31px'
-                                }}
-                            ><div>
-                                    <div>Better</div>
-                                    <Typography
-                                        variant="h5"
-                                        noWrap
-                                        component="a"
-                                        sx={{
-                                            mr: 2,
-                                            display: { xs: 'none', md: 'flex' },
-                                            fontWeight: '100px',
-                                            letterSpacing: '.2rem',
-                                            color: '#e66e32',
-                                            margin: '-15px 0 0px 0 ',
-                                            fontSize: '37px',
-                                            cursor: 'default',
-                                            fontFamily: 'Poppins-ExtraBold !important',
-                                        }}
-                                    >
-                                        LOYALTY
-                                    </Typography>
-                                </div>
-                            </Typography>
-
-                            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                                <IconButton
-                                    size="large"
-                                    aria-label="account of current user"
-                                    aria-controls="menu-appbar"
-                                    aria-haspopup="true"
-                                    onClick={handleOpenNavMenu}
-                                    color="black"
-                                >
-                                    <MenuIcon />
-                                </IconButton>
-                                <Menu
-                                    id="menu-appbar"
-                                    anchorEl={anchorElNav}
-                                    anchorOrigin={{
-                                        vertical: 'bottom',
-                                        horizontal: 'left',
-                                    }}
-                                    keepMounted
-                                    transformOrigin={{
-                                        vertical: 'top',
-                                        horizontal: 'left',
-                                    }}
-                                    open={Boolean(anchorElNav)}
-                                    onClose={handleCloseNavMenu}
-                                    sx={{
-                                        display: { xs: 'block', md: 'none' },
-                                    }}
-                                >
-                                    {navItems.map((item, index) => (
-                                        <div key={item} onClick={handleIteams}>
-
-                                        </div>
-
-                                    ))}
-                                </Menu>
-                            </Box>
-
-
-                            <Typography
-                                variant="h5"
-                                noWrap
-                                component="a"
-                                href=""
-                                sx={{
-                                    mr: 2,
-                                    display: { xs: 'flex', md: 'none' },
-                                    flexGrow: 1,
-                                    fontFamily: 'rebel',
-                                    fontWeight: 700,
-                                    letterSpacing: '.1rem',
-                                    color: '#e66e32',
-                                    textDecoration: 'none',
-                                    cursor: 'default',
-                                    fontSize: '31px'
-
-                                }}
-                            ><div>
-                                    <div>Better</div>
-                                    <Typography
-                                        variant="h5"
-                                        noWrap
-                                        component="a"
-                                        sx={{
-                                            mr: 2,
-                                            display: { xs: 'flex', md: 'none' },
-                                            fontWeight: '100px',
-                                            letterSpacing: '.2rem',
-                                            color: '#e66e32',
-                                            margin: '-15px 0 0px 0 ',
-                                            fontSize: '37px',
-                                            cursor: 'default',
-                                            fontFamily: 'Poppins-ExtraBold !important',
-                                        }}
-                                    >
-                                        LOYALTY
-                                    </Typography>
-                                </div>
-                            </Typography>
-                            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                                {pages.map((page) => (
-                                    <Button
-                                        key={page}
-                                        onClick={handleCloseNavMenu}
-                                        sx={{ my: 3, color: '#e37e44', display: 'block' }}
-                                    ></Button>
-                                ))}
-                            </Box>
-                            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                                {navItems.map((item) => (
-
-                                    <Button
-                                        onClick={handleIteams}
-                                        style={item === "Members" ? buttt : null}
-
-                                        key={item}
-                                        sx={{
-                                            color: '#e37e44',
-                                            textTransform: 'none',
-                                            fontSize: '25px', fontFamily: 'Poppins-Regular'
-                                        }}
-                                    >
-                                        {val}
-                                        {item}
-                                    </Button>
-                                ))}
-                            </Box>
-
-                            <Box sx={{ flexGrow: 0 }}>
-                                <Tooltip title="Setting">
-                                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                        <Avatar src="/" className="icon" />
-                                    </IconButton>
-                                </Tooltip>
-                                <Menu
-                                    sx={{ mt: '45px' }}
-                                    id="menu-appbar"
-                                    anchorEl={anchorElUser}
-                                    anchorOrigin={{
-                                        vertical: 'top',
-                                        horizontal: 'right',
-                                    }}
-                                    keepMounted
-                                    transformOrigin={{
-                                        vertical: 'top',
-                                        horizontal: 'right',
-                                    }}
-                                    open={Boolean(anchorElUser)}
-                                    onClose={handleCloseUserMenu}
-                                >
-                                    {settings.map((setting) => (
-                                        <MenuItem
-                                            key={setting}
-                                            onClick={logoff}
-                                            value={logout}
-                                            onChange={(e) => setLogout(e.target.value)}
-                                        >
-                                            <Typography textAlign="center">{setting}</Typography>
-                                        </MenuItem>
-                                    ))}
-                                </Menu>
-                            </Box>
-                        </Toolbar>
-                    </Container>
-                </AppBar>
-            </div> */}
             <div>
-                <Header/>
+                <Header item = "Members" />
             </div>
 
 
             <div className="top">
-                <span onClick={goBack} style={{ padding: '14px 20px 0', cursor:'pointer' }}>Go Back</span>
+                <div style={{ padding: '14px 20px 0', cursor: 'pointer' }} onClick={goBack}>Go Back</div>
                 {/* <div className="top_div_2">::: Customer Dashboard:::</div> */}
             </div>
             <div className="main">
                 <div className="inner">
                     <div>Customer Name</div>
-                    <PersonIcon />
+                    <PersonIcon style={{ fontSize: '70px' }} />
                     <div><b>Mahesh J</b></div>
                 </div>
 
                 <div className="inner">
                     <div>Membership Validity</div>
-                    <AccountBalanceWalletIcon />
+                    <AccountBalanceWalletIcon style={{ fontSize: '70px' }} />
                     <div><b>16-08-2020</b></div>
                 </div>
 
                 <div className="inner">
                     <div>Available Purchase Limit</div>
-                    <CurrencyRupeeIcon />
+                    <CurrencyRupeeIcon style={{ fontSize: '70px' }} />
                     <div><b>50000.00</b></div>
                 </div>
 
                 <div className="inner">
                     <div>Status</div>
-                    <CheckCircleOutlineIcon />
+                    <CheckCircleOutlineIcon style={{ fontSize: '70px' }} />
                     <div><b>ACTIVE</b></div>
                 </div>
 
@@ -429,8 +189,10 @@ export default function Dash() {
                     expanded={expanded === "panel1"}
                     onChange={handleChange("panel1")}
                 >
-                    <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-                        <Typography >Personal Details</Typography>
+                    <AccordionSummary
+                        aria-controls="panel1d-content"
+                        id="panel1d-header">
+                        <Typography sx={{ width: '33%', flexShrink: 0 }}>Personal Details</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>
@@ -473,7 +235,7 @@ export default function Dash() {
                     onChange={handleChange("panel2")}
                 >
                     <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-                        <Typography>Membership Details</Typography>
+                        <Typography sx={{ width: '33%', flexShrink: 0 }}>Membership Details</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>
@@ -516,7 +278,7 @@ export default function Dash() {
                     onChange={handleChange("panel3")}
                 >
                     <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-                        <Typography>Trasaction History</Typography>
+                        <Typography sx={{ width: '33%', flexShrink: 0 }}>Trasaction History</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography>

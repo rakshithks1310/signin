@@ -10,24 +10,26 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import React from 'react';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+
 
 const pages = [];
 const navItems = ['Enroll', 'Members'];
 const settings = ['Logout'];
 const header = { backgroundColor: 'white' };
 const buttt = {
-    margin: '0  50px 0 5px',
+  
+    backgroundColor: '#e66e32', color: '#fff',
 };
-const buttt2 = {
-    backgroundColor: '#e66e32', color: '#fff'
-}
+
 const icon = { backgroundColor: '#F66E1A', textTransform: 'uppercase' }
 
 function ResponsiveAppBar(props) {
+
+    const [highlight, setHighlight] = useState('true');
+
     console.log(props)
     const { state } = useLocation();
     console.log(state);
@@ -44,6 +46,7 @@ function ResponsiveAppBar(props) {
 
     const handleCloseNavMenu = () => {
         let path = '/dash';
+
         // console.log("checking");
         navigate(path, {
             replace: true
@@ -65,6 +68,7 @@ function ResponsiveAppBar(props) {
         } else {
             path = '/dash2'
         }
+       
         setTimeout(() => {
             navigate(path);
         }, 500);
@@ -218,7 +222,7 @@ function ResponsiveAppBar(props) {
                         {navItems.map((item) => (
                             <Button
                                 onClick={(e) => handleIteams(item)(e)}
-                                style = { item === "Enroll" ? buttt : null}
+                                style = { item === props.item ? buttt : null}
                                 // style={this.state.active === navItems ? activeStyle : {}} 
                                 // onClick={this.handleIteams.bind(this, navItems)}
                                 key={item}

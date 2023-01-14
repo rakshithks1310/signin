@@ -27,8 +27,6 @@ const Login = (props) => {
         borderRadius: '5px',
         color: 'white',
     };
-    const dont = { margin: '10px', fontSize: '11px', color: 'grey' };
-    const sign_link = { fontWeight: 'bold', color: 'red' };
     const paperstyle1 = {
         padding: 5,
         height: '86px',
