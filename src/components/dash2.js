@@ -131,7 +131,8 @@ export default function Dash() {
 
     let navigate = useNavigate();
     const goBack = () => {
-        navigate(-1);
+        let path = '/profile';
+        navigate(path);
     }
 
 

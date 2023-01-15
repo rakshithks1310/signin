@@ -1,17 +1,16 @@
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
+import AppBar from '@mui/material/AppBar';
 import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
+import Container from '@mui/material/Container';
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import React from 'react';
-import { useState } from 'react';
+import Toolbar from '@mui/material/Toolbar';
+import Tooltip from '@mui/material/Tooltip';
+import Typography from '@mui/material/Typography';
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 
@@ -20,11 +19,10 @@ const navItems = ['Enroll', 'Members'];
 const settings = ['Logout'];
 const header = { backgroundColor: 'white' };
 const buttt = {
-  
-    backgroundColor: '#e66e32', color: '#fff',
+    backgroundColor: '#c4487b', color: '#fff', borderRadius: '0'
 };
 
-const icon = { backgroundColor: '#F66E1A', textTransform: 'uppercase' }
+const icon = { backgroundColor: 'rgb(196, 72, 123)', textTransform: 'uppercase' }
 
 function ResponsiveAppBar(props) {
 
@@ -56,9 +54,9 @@ function ResponsiveAppBar(props) {
 
     };
 
-//    handleIteams(navItems);{
-//         this.setState({active: navItems});
-//     }
+    //    handleIteams(navItems);{
+    //         this.setState({active: navItems});
+    //     }
 
     const handleIteams = item => e => {
         console.log("item", item);
@@ -68,7 +66,7 @@ function ResponsiveAppBar(props) {
         } else {
             path = '/dash2'
         }
-       
+
         setTimeout(() => {
             navigate(path);
         }, 500);
@@ -86,7 +84,7 @@ function ResponsiveAppBar(props) {
 
     return (
         <AppBar position="static" style={header}>
-            <Container maxWidth="xl">
+            <Container maxWidth="xl" style={{ maxWidth: '1650px' }}>
                 <Toolbar disableGutters>
 
                     <Typography
@@ -218,18 +216,18 @@ function ResponsiveAppBar(props) {
                             ></Button>
                         ))}
                     </Box>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} style={{ width: '15%' }}>
                         {navItems.map((item) => (
                             <Button
                                 onClick={(e) => handleIteams(item)(e)}
-                                style = { item === props.item ? buttt : null}
+                                style={item === props.item ? buttt : null}
                                 // style={this.state.active === navItems ? activeStyle : {}} 
                                 // onClick={this.handleIteams.bind(this, navItems)}
                                 key={item}
                                 sx={{
                                     color: '#e37e44',
                                     textTransform: 'none',
-                                    fontSize: '25px', fontFamily: 'Poppins-Regular'
+                                    fontSize: '25px', fontFamily: 'Poppins-Regular', marginRight: '30px'
                                 }}
                             >
                                 {item}
@@ -238,7 +236,7 @@ function ResponsiveAppBar(props) {
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
-                        <Tooltip title="settings">
+                        <Tooltip title="profle">
                             <IconButton
                                 onClick={handleOpenUserMenu}
                                 sx={{ p: 0 }}>

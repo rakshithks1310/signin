@@ -1,13 +1,12 @@
 import Container from '@mui/material/Container';
 import Tooltip from '@mui/material/Tooltip';
-import { useLocation} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import Header from './header';
 import './profile.css';
-import Header from './header'
 
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Bar, BarChart, CartesianGrid, Legend, XAxis, YAxis } from 'recharts';
-import { style } from '@mui/system';
 
 const data = [
   { name: 'User 1', users: 2000000 },
@@ -19,7 +18,7 @@ const data = [
 const chart = {
   display: 'flex',
   flexDirection: 'row',
-  justifyContent: 'space-around',
+  justifyContent: 'space-around', marginTop: '100px'
 };
 const div_first = {
   marginTop: '-55px',
@@ -56,9 +55,9 @@ function Profile(props) {
   return (
     <div className="charge">
       <div>
-        <Header/>
+        <Header />
       </div>
-      
+
 
       <div style={chart}>
         <div className="split" style={{ marginTop: '70px' }}>

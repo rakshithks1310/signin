@@ -2,7 +2,6 @@ import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
-import MenuIcon from '@mui/icons-material/Menu';
 import PersonIcon from "@mui/icons-material/Person";
 import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
@@ -131,7 +130,8 @@ export default function Dash() {
 
     let navigate = useNavigate();
     const goBack = () => {
-        navigate(-1);
+        let path = '/profile';
+        navigate(path);
     }
 
 
@@ -149,12 +149,12 @@ export default function Dash() {
         <div className="drop">
 
             <div>
-                <Header item = "Enroll"/>
+                <Header item="Enroll" />
             </div>
 
 
             <div className="top">
-                <div style={{ padding: '14px 20px 0', cursor: 'pointer' }} onClick={goBack}>Go Back</div>
+                <div style={{ padding: '14px 32px 0', cursor: 'pointer' }} onClick={goBack}>Go Back</div>
                 {/* <div className="top_div_2">::: Customer Dashboard:::</div> */}
             </div>
             <div className="main">
