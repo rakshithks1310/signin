@@ -1,11 +1,15 @@
 .charge{
-    background-color:  #002D70 ;
+    background-color:  white ;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
-.para{
-    color: white;
+.para1{
+    padding-bottom: 5px;
+}
+.para,
+.para1{
+    color: #002D70;
     /* display: flex; */
     justify-content: center;
     align-items: center;
@@ -13,6 +17,51 @@
 }
 .icon{
     background-color: #F66E1A !important; width: 50px !important ; height: 50px !important; text-transform: uppercase;
+}
+.announce{
+    color: #002D70;
+    margin-left: 13.8%;
+    margin-top: 1%;
+    margin-bottom: 8px;
+
+}
+.annouce_inside{
+    color: #002D70;
+    border-color: #e6b394;
+    font-size: 18px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    margin-left: 13.8%;
+    margin-right: 14.8%
+}
+
+.div_inside{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 75px;
+    border-radius: 8px;
+    background-color: #002D70;
+    color: white;
+    font-size: 25px;
+    margin-right: 25px;
+    border-style: solid;
+    border-width: 2px;
+  /* height: '85px',
+  marginRight: '35px',
+  borderRadius: '5px',
+  border: 'none',
+  fontSize: '22px',
+  fontFamily: 'arial',
+  backgroundColor:  '#002D70' ,
+  color: 'white', */
 }
 
 
