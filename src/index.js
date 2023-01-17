@@ -14,7 +14,7 @@ import Dash2 from './components/dash2';
 import Header from './components/header';
 
 ReactDOM.render(
-  // <Header/>,
+
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home/>} />

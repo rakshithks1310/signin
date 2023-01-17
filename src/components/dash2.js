@@ -150,7 +150,7 @@ export default function Dash() {
         <div className="drop">
 
             <div>
-                <Header item = "Members" />
+                <Header item="Members" />
             </div>
 
 

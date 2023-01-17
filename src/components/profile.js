@@ -1,7 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import Header from './header';
 import './profile.css';
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 
 // import Col from 'react-bootstrap/Col';
 // import Row from 'react-bootstrap/Row';
@@ -27,7 +26,7 @@ const div_first = {
   marginBottom: '60px',
   justifyContent: 'space-evenly',
 };
-const div_second ={
+const div_second = {
   display: 'flex',
 }
 
@@ -62,8 +61,12 @@ function Profile(props) {
         <Header />
       </div>
 
-      <div>
-        <div className='announce'><NotificationsActiveIcon style={{ fontSize: '16px', padding : '5px 5px 0 8px' }}/> ANNOUNCEMENTS <NotificationsActiveIcon style={{ fontSize: '16px', padding : '5px 5px 0 8px' }}/></div>
+      <div style={{ marginTop: '2%' }}>
+        <div className='announce'>
+          {/* <NotificationsActiveIcon style={{ fontSize: '16px', padding : '5px 5px 0 8px' }}/> */}
+          ANNOUNCEMENTS
+          {/* <NotificationsActiveIcon style={{ fontSize: '16px', padding : '5px 5px 0 8px' }}/> */}
+        </div>
         <div className='annouce_inside'>We are taking a down-time on 15th January 2023 from 10:00am to 11:00am to bring you an event better expirence </div>
       </div>
 
@@ -72,7 +75,7 @@ function Profile(props) {
         <div className="split" >
           <div style={div_first}>
             <div>
-              <div className="para1">Total Members</div><br />
+              <div className="para1" style={{ marginBottom: '11px' }}>Total Members</div><br />
 
               <div className='div_inside'>127,000</div>
             </div>
@@ -80,7 +83,7 @@ function Profile(props) {
             <div>
               <div className="para">  New Members <br />
                 enrolled in last 30 days</div>
-              <div className='div_inside'></div>
+              <div className='div_inside'>25</div>
             </div>
 
             <div>
@@ -89,15 +92,15 @@ function Profile(props) {
                 Renewals<br />
                 in last 30 days
               </div>
-              <div className='div_inside'></div>
+              <div className='div_inside'>69</div>
             </div>
-            <div>
-              <div className="para">
+            <div style={{ marginRight: '0' }}>
+              <div className="para" >
                 Membership expiry <br />
                 in last 30 days
                 days
               </div>
-              <div className='div_inside'></div>
+              <div className='div_inside'>8</div>
             </div>
           </div>
 
@@ -105,7 +108,7 @@ function Profile(props) {
             <div>
               <div className="para">Total Redeem<br />
                 Transactions</div>
-              <div className='div_inside'></div>
+              <div className='div_inside'>101</div>
             </div>
             <div>
               <div className="para">
@@ -113,7 +116,7 @@ function Profile(props) {
                 in last 30 days
 
               </div>
-              <div className='div_inside'></div>
+              <div className='div_inside'>4</div>
             </div>
           </div>
         </div>
